@@ -14,7 +14,6 @@ def destroy
 end
 
 
-
 private 
 
   def set_product
