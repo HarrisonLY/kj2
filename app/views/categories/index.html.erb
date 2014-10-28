@@ -1,0 +1,13 @@
+<h1 style="text-align: center;"> <%= pluralize(@categories.size, 'Category') %></h1>
+
+<a href="/categories/new" style="padding-left: 45%;"> Add New Category </a>
+
+<br>
+
+<% @categories.each do |category| %>
+  <article class='category' style="padding-left: 30px;">
+    <header>
+      <h3><%= link_to(category.name, category_path(category)) %></h3>
+    </header>
+  </article>
+<% end %>

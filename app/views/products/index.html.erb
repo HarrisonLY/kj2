@@ -1,0 +1,28 @@
+<br>
+<header>
+<nav> 
+<ul class="nav nav-pills" style= "padding-left: 34%;">
+  <li><%= link_to 'Trending', filtered_products_path(:trending) %></li>
+  <li><%= link_to 'Releasing Soon', filtered_products_path(:upcoming) %></li>
+  <li><%= link_to 'Just Released', filtered_products_path(:past) %></li>
+  <li><%= link_to 'TBA', filtered_products_path(:tba) %></li>
+</ul>
+</nav> 
+</header>
+
+<br>
+<br>
+
+
+  <div class="container">
+    <div class="row" style="
+    text-align: center !important;">
+    <% @products.each do |product| %>
+      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+       <%= link_to(product.name, product_path(product)) %> <a class="thumbnail" href=""> 
+        <img class="img-responsive"> <%= image_for(product) %>
+        <%= format_releasing_on(product) %> - <%= format_releasing_on_remaining(product) %> 
+         </a>
+     </div>
+    <% end %>
+  </div>

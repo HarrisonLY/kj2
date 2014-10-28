@@ -1,0 +1,43 @@
+<%= form_for(@user) do |f| %>
+  <%= render "shared/errors", object: @user %>
+  <fieldset>
+    <ol>
+      <li class="required">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, size: 40, autofocus: true %>
+      </li>
+      <li class="required">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, size: 40 %>
+      </li>
+      <li class="required">
+        <%= f.label :email %>
+        <%= f.email_field :email, size: 40 %>
+      </li>
+      <li class="required">
+        <%= f.label :born_in %>
+        <strong> - Year: </strong>
+        <%= f.text_field :born_in, size: 10 %>
+      </li>
+      <li class="required">
+        <%= f.label :gender %>
+        <%= f.select( :gender, options_for_select([["Male", "male"],["Female","female"]])) %>
+      </li>
+      <li class="required">
+        <%= f.label :password %>
+        <%= f.password_field :password, size: 40 %>
+      </li>
+      <li class="required">
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation, size: 40 %>
+      </li>
+    </ol>
+    <p>
+        <% if @user.new_record? %>
+            <%= f.submit "Create Account" %>
+        <% else %>
+            <%= f.submit "Update Account" %>
+      <% end %>
+    </p>
+  </fieldset>
+<% end %>

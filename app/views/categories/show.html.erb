@@ -1,0 +1,11 @@
+<article>
+  <header>
+    <h1 style="text-align: center;"> <%= @category.name %></h1> 
+  </header>
+</article>
+
+<br>
+
+<% if current_user_admin? %>
+<p style="padding-left: 49%;"> <%= link_to "Edit", edit_category_path(@category) %> </p>
+    <% end %>

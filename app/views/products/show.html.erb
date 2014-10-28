@@ -1,0 +1,47 @@
+<%= content_for(:title, @product.name) %>
+
+<article>
+  
+  <header>
+    <h1 style="text-align: center;"><%= @product.name %></h1> 
+  </header>
+
+  <h2 style="max-width: 244px;padding-left: 26%;"><%= image_for(@product) %> </h2>
+
+  <h3>Releasing On</h3>
+  <p>
+    <%= format_releasing_on(@product) %> - <%= format_releasing_on_remaining(@product) %>
+  </p>
+  <p>
+ <%= pluralize(@clockers.size, 'clock') %> 
+    <% if current_user %>
+    <% if @current_clock %>
+      <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
+    <% else %>
+      <%= button_to "Clock", product_clocks_path(@product) %>
+  <% end %>
+<% end %>
+  </p>
+    <p>
+  <h2>Description</h2>
+  <p>
+    <%= @product.description %>
+  </p>
+
+  </p>
+
+  <h3>Price</h3>
+  <p>
+    <%= format_price(@product) %>
+  </p>
+  
+  <h3>Website</h3>
+<p>
+  <%= @product.website %>
+</p>
+
+</article>
+
+<% if current_user_admin? %>
+<%= link_to "Edit", edit_product_path(@product) %>
+<% end %>

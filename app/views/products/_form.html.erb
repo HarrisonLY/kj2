@@ -1,0 +1,46 @@
+<%= form_for(@product) do |f| %>
+  <%= render "shared/errors", object: @product %>
+
+  <fieldset>
+    <ol>
+      <li class="required">
+          <%= f.label :name %><br/>
+          <%= f.text_field :name %>
+      </li>
+      <% unless @product.new_record? %>
+        <li>
+          <%= f.label :slug %>
+          <%= f.text_field :slug, size: 30 %>
+        </li>
+      <% end %>
+      <li class="required">
+          <%= f.label :category %><br/>
+          <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+      </li>
+      <li class=>
+          <%= f.label :releasing_on %><br/>
+          <%= f.date_field :releasing_on %>
+      </li>
+      <li class=>
+        <%= f.label :price %><br/>
+        <%= f.number_field :price %>
+      </li>
+      <li class>
+          <%= f.label :description %><br/>
+          <%= f.text_area :description, cols: 40, rows: 8 %>
+      </li>
+      <li class=>
+          <%= f.label :website %><br/>
+          <%= f.text_field :website %>
+      </li>
+      <li class=>
+          <%= f.label :image_file_name %><br/>
+          <%= f.text_field :image_file_name, size:40 %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", products_path %>
+    </p>
+  </fieldset>
+<% end %>

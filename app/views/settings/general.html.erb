@@ -1,0 +1,22 @@
+<h1  style="text-align: center;"> General</h1>
+
+<br>
+
+<ul class="nav nav-tabs" role="tablist" style="padding-left: 38.5%;">
+  <li class="active"><a href="/settings/general">General</a></li>
+  <li><a href="/settings/notifications">Notifications</a></li>
+  <li><a href="/settings/help">Help</a></li>
+</ul>
+
+<br>
+<br>
+
+<h3 style="text-align: center;"> <%= current_user.first_name %> <%= current_user.last_name %> </h3>
+
+<h3 style="text-align: center;"> Email - <%= current_user.email %> </h3>
+
+<br>
+<br>
+
+<p class="btn btn-primary btn-lg active" role="button" style="
+    margin-left: 44%; background-color: #FFF;"> <%= link_to "Edit Account", edit_user_path(current_user) %> </p>

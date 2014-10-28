@@ -1,0 +1,34 @@
+<%= content_for(:title, @user.first_name) %>
+
+<article id="user">
+  <header>
+     <h1 style="text-align: center;"> My Timecard </h1>
+  </header>
+
+<% @clocked_products %>
+<h4 style="text-align: center;color: red;font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
+
+
+  <ol>
+   <% @clocked_products.each do |product| %>
+     <li>
+       <%= link_to product.name, product %> 
+       <%= link_to format_releasing_on(product), product %> 
+     </li>
+    <% end %>
+  </ol>
+
+<br>
+
+<footer>
+  <nav>
+    <% if current_user_admin? %>
+    <hr style="border-color: #000; border: solid 1px;">
+      <p style="padding-left: 46%;">
+      <%= link_to 'Delete Account', @user, 
+        method: :delete, data: { confirm: 'Are you sure you want to permanently delete your account?' } %>
+      <% end %> 
+    </p>
+  </nav>
+</footer>
+</article>
