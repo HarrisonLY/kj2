@@ -7,13 +7,14 @@ class Product < ActiveRecord::Base
 
 	validates :description, length: {maximum: 1000}
 
+
 	validates :image_file_name, allow_blank: true, format: {
  	 with:    /\w+.(gif|jpg|png)\z/i,
  	 message: "must reference a GIF, JPG, or PNG image"
 	}
 
 
- 
+
     has_many :clocks, dependent: :destroy
     has_many :clockers, through: :clocks, source: :user
 

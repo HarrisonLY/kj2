@@ -27,6 +27,8 @@ Kijovo::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
