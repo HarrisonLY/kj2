@@ -57,33 +57,43 @@ padding-left: 50px;">
 <% if not current_user %>
 
 
-<div style="position: absolute;right: 70px;top: 200px;">
-<%= form_tag(session_path) do %>
-  <h4 style="text-align: center;">LOG IN</h4>
-  <fieldset class="required">
-        <%= email_field_tag :email, nil, autofocus: true, size: 27 %>
-        <br>
-        <%= password_field_tag :password, nil, size: 21 %> <%= submit_tag 'GO' %>
-  </fieldset>
-<% end %>
-</div>
-
-
 <a href="/signup" class="btn btn-primary" role="button" style="
-    right: 50px;
-    top: 350px;
+    right: 72px;
+    top: 360.5px;
     bottom: auto;
     margin-right: 0px;
-    padding-right: 80px;
-    padding-left: 80px;
+    padding-right: 92px;
+    padding-left: 92px;
 ">Sign Up</a>
 
-<a href="/signin" class="btn btn-primary" role="button" style="
-    right: 50px;
-    top: 50px;
-    bottom: auto;
-    margin-right: 0px;
-    padding-right: 80px;
-    padding-left: 80px;
-">Log In</a>
 <% end %>
+
+<div style="position: absolute;right: 70px;top: 210px;">
+<%= form_tag(session_path) do %>
+  <h4 style="text-align: center; font-size: 16px">LOG IN</h4>
+    <fieldset class="required">
+      <div class="form-group">
+    <label for="email" class="sr-only">Email</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" style="margin-right: 64px;">
+      </div>
+      <div class="form-group" style="margin-right: 50px;">
+    <label for="key" class="sr-only">Password</label>
+      <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+      </div>
+<input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="GO" style="
+    width: 45px;
+    position: absolute;
+    height: 32px;
+    padding-right: 19px;
+    border-right-width: 1px;
+    padding-left: 8px;
+    right: 0;
+    top: 87px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+">
+<hr style="border-top: 1px solid rgb(181, 181, 181);">
+  </fieldset>
+<% end %>
+
+</div>
