@@ -24,6 +24,7 @@ Kijovo::Application.routes.draw do
 
      resources :users
      get 'signup' => 'users#new'
+     post 'users_create' => 'users#create'
      get 'users/general'
      get 'users/notifications'
      get 'users/help'

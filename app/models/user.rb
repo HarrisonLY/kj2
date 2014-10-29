@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
 validates :first_name, presence: true
 validates :last_name, presence: true
-validates :password, length: { minimum: 5, allow_blank: true }
+validates :password, length: { minimum: 4, allow_blank: true }
 
 validates :gender, presence: true
 validates :born_in, presence: true

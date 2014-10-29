@@ -1,3 +1,6 @@
+<%
+=begin %>
+
 <%= form_for(@user) do |f| %>
   <%= render "shared/errors", object: @user %>
   <fieldset>
@@ -41,3 +44,61 @@
     </p>
   </fieldset>
 <% end %>
+
+
+<%
+=end %>
+
+
+<br>
+
+<div style="padding-left: 25%; padding-right: 25%;">
+<%= form_for(@user) do |f| %>
+  <%= render "shared/errors", object: @user %>
+    <fieldset class="required">
+
+     <div class="form-group" class="required">
+    <label for="first_name" class="sr-only">user[first_name]</label>
+      <input type="text" name="user[first_name]" id="user[first_name]" class="form-control" placeholder="First Name: Clark" >
+      </div>
+
+      <div class="form-group" class="required">
+    <label for="last_name" class="sr-only">user[last_name]</label>
+      <input type="text" name="user[last_name]" id="user[last_name]" class="form-control" placeholder="Last Name: Kent">
+      </div>
+
+      <div class="form-group" class="required">
+    <label for="email" class="sr-only">user[email]</label>
+      <input type="email" name="user[email]" id="user[email]" class="form-control" placeholder="Email: Batmancantfly@gmail.com">
+      </div>
+
+      <div class="form-group" class="required">
+    <label for="text" class="sr-only">user[born_in]</label>
+      <input type="text" name="user[born_in]" id="user[born_in]" class="form-control" placeholder="Birth Year: 1938">
+      </div>
+
+      <div class="form-group" class="required">
+    <label for="text" class="sr-only">user[gender]</label>
+    <input type="radio" name="user[gender]" id="user[gender]" value="male"> Male &nbsp; &nbsp;
+    <input type="radio" name="user[gender]" id="user[gender]" value="female"> Female
+      </div>
+
+      <div class="form-group" class="required">
+    <label for="key" class="sr-only">user[password]</label>
+      <input type="password" name="user[password]" id="user[password]" class="form-control" placeholder="Password">
+      </div>
+
+      <div class="form-group" class="required">
+    <label for="key" class="sr-only">user[password_confirmation]</label>
+      <input type="password" name="user[password_confirmation]" id="user[password_confirmation]" class="form-control" placeholder="Re-Type Password">
+      </div>
+    <p> 
+        <% if @user.new_record? %> 
+    <input class="btn btn-custom btn-md btn-block" type="submit" value="Create Account" style="color: white;background-color: rgb(0, 202, 0);">
+        <% else %>
+    <input class="btn btn-custom btn-md btn-block" type="submit" value="Update Account" style="color: white;background-color: rgb(0, 202, 0);">
+      <% end %>
+    </p>
+  </fieldset>
+<% end %>
+</div>
