@@ -1,18 +1,37 @@
-<%= content_for(:title, @product.name) %>
+<%= content_for(:title, @product.name) %> 
 
 <article>
-  
+
+<br>
+
   <header>
-    <h1 style="text-align: center;"><%= @product.name %></h1> 
+    <h2 style="text-align: center;"><%= @product.name %></h2> 
+    <p style="text-align: center;">
+      <% if current_user_admin? %>
+      <%= link_to "Edit", edit_product_path(@product) %>
+      <% end %>
+    </p>
   </header>
 
-  <h2 style="max-width: 244px;padding-left: 26%;"><%= image_for(@product) %> </h2>
+<br>
 
-  <h3>Releasing On</h3>
-  <p>
-    <%= format_releasing_on(@product) %> - <%= format_releasing_on_remaining(@product) %>
-  </p>
-  <p>
+    <div class="container">
+    <div class="row" style="text-align: center !important;">
+      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+        <a class="thumbnail" style="position: fixed; max-width: 350px"> 
+        <img class="img-responsive"> <%= image_for(@product) %>
+        <%= format_releasing_on(@product) %> - <%= format_releasing_on_remaining(@product) %> 
+         </a>
+     </div>
+  </div>
+
+<div style="padding-left: 35%; padding-right: 15%; position: fixed;">
+  <h4 style="text-align: center;">Overview</h4>
+    <%= @product.description %>
+</div>
+
+
+  <div style="position: fixed; padding-top: 23%;">
  <%= pluralize(@clockers.size, 'clock') %> 
     <% if current_user %>
     <% if @current_clock %>
@@ -21,27 +40,12 @@
       <%= button_to "Clock", product_clocks_path(@product) %>
   <% end %>
 <% end %>
-  </p>
-    <p>
-  <h2>Description</h2>
-  <p>
-    <%= @product.description %>
-  </p>
+  </div>
 
-  </p>
-
-  <h3>Price</h3>
-  <p>
-    <%= format_price(@product) %>
-  </p>
+  <div style="position: fixed; padding-top: 25%; padding-left: 15%">
+  <h4>Price <%= format_price(@product) %> </h4>
+</div>
   
-  <h3>Website</h3>
-<p>
-  <%= @product.website %>
-</p>
+  <h5 style="position: fixed; padding-top: 28%; padding-left: 9%"> <%= link_to 'Website', @product.website %> </h5>
 
 </article>
-
-<% if current_user_admin? %>
-<%= link_to "Edit", edit_product_path(@product) %>
-<% end %>
