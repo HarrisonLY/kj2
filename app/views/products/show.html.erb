@@ -18,20 +18,20 @@
     <div class="container">
     <div class="row" style="text-align: center !important;">
       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" style="position: fixed; max-width: 350px"> 
+        <a class="thumbnail" style="position: fixed; width: 340px; height: 287px"> 
         <img class="img-responsive"> <%= image_for(@product) %>
         <%= format_releasing_on(@product) %> - <%= format_releasing_on_remaining(@product) %> 
          </a>
      </div>
   </div>
 
-<div style="padding-left: 35%; padding-right: 15%; position: fixed;">
-  <h4 style="text-align: center;">Overview</h4>
-    <%= @product.description %>
+<div style="padding-left: 400px; padding-right: 50px; position: fixed;">
+  <h4 style="text-align: center; margin-top: 1px;">Overview</h4>
+    <p style="font-size: 14px;"> <%= @product.description %> </p>
 </div>
 
 
-  <div style="position: fixed; padding-top: 23%;">
+  <div style="">
  <%= pluralize(@clockers.size, 'clock') %> 
     <% if current_user %>
     <% if @current_clock %>

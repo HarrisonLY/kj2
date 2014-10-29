@@ -31,7 +31,7 @@ end
 
 def image_for(product)
   if product.image_file_name.blank?
-    image_tag(src="http://placehold.it/400x300")  
+    image_tag('placeholder.png')
   else
     image_tag(product.image_file_name)
   end
