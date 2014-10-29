@@ -25,7 +25,7 @@
   <div class="container">
     <div class="row" style="text-align: center !important;">
     <% @products.each do |product| %>
-      <div class="col-md-4 thumb">
+      <div class="col-xs-6 col-md-4 thumb">
        <%= link_to(product.name, product_path(product)) %> <a class="thumbnail" href=""> 
         <img class="img-responsive"> <%= image_for(product) %>
         <%= format_releasing_on(product) %> - <%= format_releasing_on_remaining(product) %> 
