@@ -5,6 +5,10 @@ class ClocksController < ApplicationController
 def create
 	@product.clocks.create!(user: current_user)  
 	redirect_to @product
+  #if @product
+  #  redirect_to @product
+  #else redirect_to products_url
+#end
 end
 
 def destroy

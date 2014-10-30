@@ -21,15 +21,21 @@
 <br>
 <br>
 
-
-  <div class="container">
-    <div class="row" style="text-align: center !important;">
+   <div class="container" style="text-align: center;">
+    <div class="row">
     <% @products.each do |product| %>
       <div class="col-lg-3 col-md-4 thumb">
-       <%= link_to(product.name, product_path(product)) %> <a class="thumbnail" href=""> 
-        <img class="img-responsive"> <%= image_for(product) %>
-        <%= format_releasing_on(product) %> - <%= format_releasing_on_remaining(product) %> 
+       <span style="text-align: center !important;"> <%= link_to(product.name, product_path(product)) %> <a class="thumbnail" href="">
+        <img class="img-responsive"> <%= image_for(product) %> </span>
+        <%= format_releasing_on(product) %> - <span  style="color: red;"><%= format_releasing_on_remaining(product) %> </span>     
          </a>
+<% if current_user %>
+  <% if @current_clock %>
+  <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
+<% else %>
+  <%= button_to "Clock", product_clocks_path(product) %>
+  <% end %>
+<% end %>
      </div>
     <% end %>
   </div>

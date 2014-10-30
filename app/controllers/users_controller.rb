@@ -5,11 +5,15 @@ class UsersController < ApplicationController
 
 def index
   @users = User.all
+
 end
 
 def show
   @user = User.find(params[:id])
-  @clocked_products = @user.clocked_products
+  @clocked_products = @user.clocked_products  
+  #if current_user
+  #@current_clock = current_user.clocks.find_by(product_id: @product.id)
+  #end
 end
 
 

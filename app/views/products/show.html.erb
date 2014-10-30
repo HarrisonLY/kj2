@@ -16,21 +16,21 @@
 <br>
 
     <div class="container">
-    <div class="row" style="text-align: center !important;">
+    <div class="row">
       <div class="col-md-4 thumb">
-        <a class="thumbnail" style="position: absolute; width: 300px; height: 260px"> 
+        <a class="thumbnail" style="position: absolute; width: 270px;"> 
         <img class="img-responsive"> <%= image_for(@product) %>
-        <%= format_releasing_on(@product) %> - <%= format_releasing_on_remaining(@product) %> 
          </a>
      </div>
   </div>
 
-<div style="padding-left: 400px; padding-right: 60px; position: absolute;">
+<div style="padding-left: 360px; padding-right: 60px; position: absolute;">
   <h4 style="text-align: center; margin-top: 1px;">Overview</h4>
     <p style="font-size: 14px;"> <%= @product.description %> </p>
 </div>
 
- <div style="margin-top: 300px;">
+ <div style="margin-top: 235px;">
+     <%= format_releasing_on(@product) %> - <span style="color: red;"> <%= format_releasing_on_remaining(@product) %> </span>
     <% if current_user %>
     <% if @current_clock %>
       <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
