@@ -17,22 +17,20 @@
 
     <div class="container">
     <div class="row" style="text-align: center !important;">
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" style="position: fixed; width: 340px; height: 287px"> 
+      <div class="col-md-4 thumb">
+        <a class="thumbnail" style="position: absolute; width: 300px; height: 260px"> 
         <img class="img-responsive"> <%= image_for(@product) %>
         <%= format_releasing_on(@product) %> - <%= format_releasing_on_remaining(@product) %> 
          </a>
      </div>
   </div>
 
-<div style="padding-left: 400px; padding-right: 60px; position: fixed;">
+<div style="padding-left: 400px; padding-right: 60px; position: absolute;">
   <h4 style="text-align: center; margin-top: 1px;">Overview</h4>
     <p style="font-size: 14px;"> <%= @product.description %> </p>
 </div>
 
-
-  <div style="">
- <%= pluralize(@clockers.size, 'clock') %> 
+ <div style="margin-top: 300px;">
     <% if current_user %>
     <% if @current_clock %>
       <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
@@ -42,10 +40,10 @@
 <% end %>
   </div>
 
-  <div style="position: fixed; padding-top: 25%; padding-left: 15%">
+  <div style="margin-top: 10px">
   <h4>Price <%= format_price(@product) %> </h4>
 </div>
   
-  <h5 style="position: fixed; padding-top: 28%; padding-left: 9%"> <%= link_to 'Website', @product.website %> </h5>
+  <h5 style="margin-top: 10px"> <%= link_to 'Website', @product.website %> </h5>
 
 </article>
