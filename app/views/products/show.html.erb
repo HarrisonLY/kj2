@@ -5,12 +5,13 @@
 <br>
 
   <header>
-    <h2 style="text-align: center;"><%= @product.name %></h2> 
-    <p style="text-align: center;">
-      <% if current_user_admin? %>
+  <% if current_user_admin? %>
+    <p style="text-align: center; width: 80%; margin-left: 9%;">
       <%= link_to "Edit", edit_product_path(@product) %>
-      <% end %>
     </p>
+  <% end %>
+
+    <h1 style="text-align: center; font-size: 18px; border: 1px solid; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 9%;"> <%= @product.name %></h1> 
   </header>
 
 <br>
@@ -24,9 +25,9 @@
      </div>
   </div>
 
-<div style="margin-left: 350px; position: absolute; width: 500px;">
-    <h4 style="text-align: center; margin-top: .5px;">Overview</h4>
-    <p style="font-size: 14px;"> <%= @product.description %> </p>
+<div style="margin-left: 310px; position: absolute; width: 475px; border: 1px solid; border-radius: 8px;">
+    <h4 style="font-size: 16px; text-align: center; margin-top: 20px;">Overview</h4>
+    <p style="font-size: 14px; padding-left: 25px; padding-right: 25px"> <%= @product.description %> </p>
 </div>
 
  <div style="margin-top: 235px; width: 270px;">
@@ -40,10 +41,10 @@
 <% end %>
   </div>
 
-  <div style="margin-top: 10px; width: 270px; text-align: center;">
-  <h4>Price <%= format_price(@product) %> </h4>
+  <div style="padding-top: 1.5px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border: 1px solid; border-radius: 6px;">
+  <h4 style="font-size: 14px;">Price <%= format_price(@product) %> </h4>
 </div>
   
-  <h5 style="margin-top: 10px; width: 270px; text-align: center;"> <%= link_to 'Website', @product.website %> </h5>
+  <h5 style="padding-top: 11px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border: 1px solid; border-radius: 6px;"> <%= link_to 'Website', @product.website %> </h5>
 
 </article>

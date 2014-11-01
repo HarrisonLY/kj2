@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :slug, uniqueness: true
 
-	validates :description, length: {maximum: 1000}
+	validates :description, length: {maximum: 800}
 
 
 	validates :image_file_name, allow_blank: true, format: {
