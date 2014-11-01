@@ -3,17 +3,16 @@
 </header>
 
 
-<table class="table table-bordered" id="users" style = "margin-top: 50px;">
+<table class="table table-bordered" id="users" style = "width: 85%; margin-top: 50px;" align="center">
     <thead>
         <tr>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
             <th>Age</th>
             <th>Gender</th>            
             <th>Email</th>
-            <th>Total Products Clocked</th>
-            <th>Total Sessions</th>
+            <th>TPC</th>
+            <th>Sessions</th>
             <th>Last Login</th>
         </tr>
     </thead>
@@ -21,13 +20,12 @@
   <% @users.each do |user| %>
         <tr>
             <td> <%= link_to user.id, user %> </td>
-            <td> <%= link_to user.first_name, user %> </td>
-            <td> <%= link_to user.last_name, user %> </td>
+            <td> <%= link_to user.first_name, user %> <%= link_to user.last_name, user %> </td>
             <td> <%= Time.now.year - user.born_in %> </td>
             <td> <%= user.gender %> </td>
             <td> <%= user.email %> </td>
             <td> <%= user.clocked_products.size %> </td>
-            <td>Total Sessions</td>
+            <td>Sessions</td>
             <td>Last Login</td>
         </tr>
           <% end %>

@@ -24,15 +24,15 @@
      </div>
   </div>
 
-<div style="padding-left: 360px; padding-right: 60px; position: absolute;">
-  <h4 style="text-align: center; margin-top: 1px;">Overview</h4>
+<div style="margin-left: 350px; position: absolute; width: 500px;">
+    <h4 style="text-align: center; margin-top: .5px;">Overview</h4>
     <p style="font-size: 14px;"> <%= @product.description %> </p>
 </div>
 
- <div style="margin-top: 235px;">
+ <div style="margin-top: 235px; width: 270px;">
      <%= format_releasing_on(@product) %> - <span style="color: red;"> <%= format_releasing_on_remaining(@product) %> </span>
     <% if current_user %>
-    <% if @current_clock %>
+    <% if @current_clock %> 
       <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
     <% else %>
       <%= button_to "Clock", product_clocks_path(@product) %>
@@ -40,10 +40,10 @@
 <% end %>
   </div>
 
-  <div style="margin-top: 10px">
+  <div style="margin-top: 10px; width: 270px; text-align: center;">
   <h4>Price <%= format_price(@product) %> </h4>
 </div>
   
-  <h5 style="margin-top: 10px"> <%= link_to 'Website', @product.website %> </h5>
+  <h5 style="margin-top: 10px; width: 270px; text-align: center;"> <%= link_to 'Website', @product.website %> </h5>
 
 </article>

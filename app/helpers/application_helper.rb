@@ -8,3 +8,4 @@ def page_title
   end
 end
 end
+

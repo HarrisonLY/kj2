@@ -9,14 +9,23 @@
 <h4 style="text-align: center;color: red;font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
 
 
-  <ol>
+<table class="table table-striped" style="width: 700px;" align="center">
+  <thead>
+    <th> Product Name</th>
+    <th> Release Date </th>
+    <th> Days Remaining </th>
+    <th> Clock/Unclock </th>
+  </thead>
+  <tbody>
    <% @clocked_products.each do |product| %>
-     <li>
-       <%= link_to product.name, product %> 
-       <%= link_to format_releasing_on(product), product %> 
-     </li>
+      <tr>
+        <td> <%= link_to product.name, product %> </td>
+        <td> <%= format_releasing_on(product) %> </td>
+        <td> <span style="color: red;"> <%= format_releasing_on_remaining(product) %> </span>  </td>
+      </tr>
     <% end %>
-  </ol>
+  </tbody>
+</table>
 
 <br>
 
@@ -25,8 +34,8 @@
     <% if current_user_admin? %>
     <hr style="border-color: #000; border: solid 1px;">
       <p style="padding-left: 46%;">
-      <%= link_to 'Delete Account', @user, 
-        method: :delete, data: { confirm: 'Are you sure you want to permanently delete your account?' } %>
+      <%= link_to 'Delete Account', @user, :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
       <% end %> 
     </p>
   </nav>

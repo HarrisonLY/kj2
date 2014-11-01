@@ -1,6 +1,5 @@
 module ProductsHelper
 
-
 def format_price(product)
   if product.tbd?
   "TBD"
