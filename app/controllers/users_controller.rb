@@ -8,9 +8,13 @@ def index
 
 end
 
+
+  helper_method :sort_column, :sort_direction
 def show
   @user = User.find(params[:id])
-  @clocked_products = @user.clocked_products  
+  @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
+  
+
   #if current_user
   #@current_clock = current_user.clocks.find_by(product_id: @product.id)
   #end
@@ -58,5 +62,13 @@ end
     @user = User.find(params[:id])
       redirect_to products_url unless current_user? (@user)
     end
+
+      def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "releasing_on"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 
 end
