@@ -6220,4 +6220,21 @@ button.close {
     display: none !important;
   }
 }
+
+table.timecard
+
+.timecard th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.timecard th .asc {
+  background-image: <i class="glyphicon glyphicon-chevron-up" </i>;
+}
+
+.timecard th .desc {
+  background-image: <i class="glyphicon glyphicon-chevron-down" </i>;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

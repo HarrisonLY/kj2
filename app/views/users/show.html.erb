@@ -9,9 +9,9 @@
 <h4 style="text-align: center;color: red;font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
 
 
-<table class="table table-striped" style="width: 60%; margin-top: 25px;" align="center">
+<table class="timecard" style="width: 60%; margin-top: 25px;" align="center">
   <thead>
-    <th><%= sortable "name" %></th>
+    <th><%= sortable "name", "Product Name" %></th>
     <th><%= sortable "releasing_on", "Release Date" %></th>
     <th> Days Remaining </th>
     <th> Unclock </th>
