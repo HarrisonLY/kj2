@@ -13,9 +13,11 @@
 
 <%= render "layouts/header" %>
 
-<p>
+<div id="wrapper">
+
   <%= flash[:notice] %>
-</p>
+  
+  <div id="container">
 
 <%= yield %>
 

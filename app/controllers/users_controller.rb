@@ -41,6 +41,7 @@ end
 def update
   if @user.update(user_params)
     redirect_to @user
+    flash[:notice] = "Account successfully updated!"
   else
     render :edit
   end

@@ -8,8 +8,22 @@
 <% @clocked_products %>
 <h4 style="text-align: center;color: red;font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
 
+<div class="row" style="
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 20px;
+">
+<div class="span12 centered-pills">  
+<nav> 
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation" class="active"><a href="#">List View</a></li>
+  <li role="presentation"><a href="#">Product View</a></li>
+</ul>
+</nav> 
+</div>
+</div>
 
-<table class="timecard" style="width: 60%; margin-top: 25px;" align="center">
+<table class="table-timecard" style="width: 60%; margin-top: 25px;" align="center">
   <thead>
     <th><%= sortable "name", "Product Name" %></th>
     <th><%= sortable "releasing_on", "Release Date" %></th>
@@ -26,6 +40,8 @@
     <% end %>
   </tbody>
 </table>
+
+
 
 <footer>
   <nav>

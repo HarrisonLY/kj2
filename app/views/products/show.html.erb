@@ -11,7 +11,7 @@
     </p>
   <% end %>
 
-    <h1 style="text-align: center; font-size: 18px; border: 1px solid; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 9%;"> <%= @product.name %></h1> 
+    <h1 style="text-align: center; font-size: 18px; border: 1px solid; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 9%; background-color: rgb(81, 81, 81);color: white;"> <%= @product.name %></h1> 
   </header>
 
 <br>
@@ -25,9 +25,9 @@
      </div>
   </div>
 
-<div style="margin-left: 310px; position: absolute; width: 475px; border: 1px solid; border-radius: 8px;">
-    <h4 style="font-size: 16px; text-align: center; margin-top: 20px;">Overview</h4>
-    <p style="font-size: 14px; padding-left: 25px; padding-right: 25px"> <%= @product.description %> </p>
+<div style="margin-left: 310px; position: absolute; width: 475px; border: 1px solid; border-radius: 8px; background-color: rgb(81, 81, 81);">
+    <h4 style="font-size: 16px; text-align: center; margin-top: 20px; color: rgb(167, 205, 249);">Overview</h4>
+    <p style="font-size: 14px; padding-left: 25px; padding-right: 25px; color: white;"> <%= @product.description %> </p>
 </div>
 
  <div style="margin-top: 235px; width: 270px;">
@@ -41,10 +41,10 @@
 <% end %>
   </div>
 
-  <div style="padding-top: 1.5px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border: 1px solid; border-radius: 6px;">
+  <div style="padding-top: 1.5px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border: 1px solid; border-radius: 6px; background-color: rgb(81, 81, 81);color: white;">
   <h4 style="font-size: 14px;">Price <%= format_price(@product) %> </h4>
 </div>
   
-  <h5 style="padding-top: 11px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border: 1px solid; border-radius: 6px;"> <%= link_to 'Website', @product.website %> </h5>
+  <h5 style="padding-top: 11px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border: 1px solid; border-radius: 6px; background-color: rgb(81, 81, 81);"> <%= link_to 'Website', @product.website %> </h5>
 
 </article>
