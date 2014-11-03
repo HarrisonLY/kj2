@@ -4604,12 +4604,12 @@ a.list-group-item.active > .badge,
 }
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: ;
   margin-bottom: 10px;
-  line-height: 2;
+  line-height: initial;
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: ;
+  border-radius: ;
   -webkit-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;

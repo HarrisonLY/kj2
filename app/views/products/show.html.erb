@@ -19,19 +19,19 @@
     <div class="container">
     <div class="row">
       <div class="col-md-4 thumb">
-        <a class="thumbnail" style="position: absolute; width: 270px;"> 
+        <div class="thumbnail" style="position: absolute; width: 270px;"> 
         <img class="img-responsive"> <%= image_for(@product) %>
-          <div style="position: absolute; padding-left:165px;"> <% if current_user %>
+          <div style="position: absolute; padding-left:180px; padding-top: 7px;"> <% if current_user %>
     <% if @current_clock %> 
       <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
     <% else %>
       <%= button_to "Clock", product_clocks_path(@product) %>
     <% end %> 
-          </div>
-         <div style="font-size: 17px; padding-left: 10px;padding-top: 5px; height: 38px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; background-color: rgb(115, 145, 192);color: white;">
-     <%= format_releasing_on(@product) %> - <span style="color: red;"> <%= format_releasing_on_remaining(@product) %> </span> </div>
-        <% end %>
-      </a>
+          </div> 
+         <div style="font-size: 17px; padding-left: 18px;padding-top: 9px; height: 38px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; background-color: rgb(115, 145, 192);color: white;">
+     <%= format_releasing_on(@product) %> - <span style="color: red;"> <%= format_releasing_on_remaining(@product) %> </span>  </div>
+        <% end %> 
+        </div>
     </div>
   </div>
 
@@ -40,11 +40,10 @@
     <p style="font-size: 14px; padding-left: 25px; padding-right: 25px; color: white;"> <%= @product.description %> </p>
 </div>
 
-
-  <div style="padding-top: 1.5px; margin-top: 250px; width: 270px; height: 38px; text-align: center; border-radius: 6px; background-color: rgb(81, 81, 81);color: white;">
+  <div style="padding-top: 1.5px; margin-top: 252px; width: 270px; height: 38px; text-align: center; border-radius: 6px; background-color: rgb(81, 81, 81);color: white;">
   <h4 style="font-size: 14px;">Price <%= format_price(@product) %> </h4>
 </div>
   
-  <h5 style="padding-top: 11px; margin-top: 10px; width: 270px; height: 38px; text-align: center; border-radius: 6px; background-color: rgb(81, 81, 81);"> <%= link_to 'Website', @product.website %> </h5>
+  <h5 style="padding-top: 11px; margin-top: 12px; width: 270px; height: 38px; text-align: center; border-radius: 6px; background-color: rgb(81, 81, 81);"> <%= link_to 'Website', @product.website %> </h5>
 
 </article>
