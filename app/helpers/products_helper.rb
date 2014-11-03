@@ -30,7 +30,7 @@ end
 
 def image_for(product)
   if product.image_file_name.blank?
-    image_tag('placeholder.png')
+    image_tag('placeholder_sneaker.png')
   else
     image_tag(product.image_file_name)
   end
