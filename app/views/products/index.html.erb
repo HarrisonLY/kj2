@@ -25,10 +25,12 @@
     <div class="row">
     <% @products.each do |product| %>
       <div class="col-lg-3 col-md-4 thumb">
-       <span style="text-align: center !important;"> <%= link_to(product.name, product_path(product)) %> <a class="thumbnail" href="">
-        <img class="img-responsive"> <%= image_for(product) %> </span>
-        <%= format_releasing_on(product) %> - <span  style="color: red;"><%= format_releasing_on_remaining(product) %> </span> 
-         </a>
+       <span style="text-align: center !important;"> <%= link_to(product.name, product_path(product)) %> </span> <a class="thumbnail" href=""> 
+        <img class="img-responsive"> <%= image_for(product) %> </a>
+
+<div style="padding-top: 8px; margin-top: 10px;  height: 38px; text-align: center; border-radius: 6px; background-color: rgb(115, 145, 192);color: white;">
+<%= format_releasing_on(product) %> - <span  style="color: black;"><%= format_releasing_on_remaining(product) %> </span> </div>
+
 <% if current_user %>
   <% if @current_clock %>
   <%= button_to "UnClock", product_clock_path(@products, @current_clock), method: :delete %>
