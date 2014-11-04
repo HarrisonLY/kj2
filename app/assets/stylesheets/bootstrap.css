@@ -12,7 +12,7 @@ html {
 }
 body {
   margin: 0;
-  padding-top: 60px; 
+  padding-top: 50px; 
   padding-bottom: 50px;
 }
 
@@ -4609,7 +4609,8 @@ a.list-group-item.active > .badge,
   line-height: initial;
   background-color: #fff;
   border: ;
-  border-radius: ;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   -webkit-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
