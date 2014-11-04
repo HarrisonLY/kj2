@@ -1,7 +1,8 @@
 <%= form_for(@product) do |f| %>
   <%= render "shared/errors", object: @product %>
 
-  <fieldset>
+<form class="form-horizontal" role="form">
+    <div class="form-group">
     <ol>
       <li class="required">
           <%= f.label :name %><br/>
@@ -27,20 +28,32 @@
       </li>
       <li class>
           <%= f.label :description %><br/>
-          <%= f.text_area :description, cols: 40, rows: 8 %>
+          <%= f.text_area :description, cols: 60, rows: 8 %>
       </li>
       <li class=>
           <%= f.label :website %><br/>
           <%= f.text_field :website %>
       </li>
       <li class=>
-          <%= f.label :image_file_name %><br/>
-          <%= f.text_field :image_file_name, size:40 %>
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+      </li>
+      <li>
+        <%= image_for(@product) %>
       </li>
     </ol>
     <p>
       <%= f.submit %>
       <%= link_to "Cancel", products_path %>
     </p>
-  </fieldset>
 <% end %>
+</form>
+
+
+
+
+
+
+
+
+

@@ -29,10 +29,10 @@ def format_releasing_on(product)
 end
 
 def image_for(product)
-  if product.image_file_name.blank?
-    image_tag('placeholder_sneaker.png')
+  if product.image.exists?
+    image_tag(product.image.url)
   else
-    image_tag(product.image_file_name)
+    image_tag('placeholder_sneaker.png')
   end
 end
 
