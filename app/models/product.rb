@@ -45,6 +45,10 @@ class Product < ActiveRecord::Base
 		releasing_on.blank?
 	end
 
+	def out?
+		releasing_on < Time.now
+	end		
+
 	def to_param
 		slug
 	end
@@ -53,18 +57,6 @@ class Product < ActiveRecord::Base
 		self.slug ||= name.parameterize if name
 	end
 
-
-	#def self.tba
-	#	where("releasing_on = ?").order("name")
-	#end
-
-	#def self.upcoming
-	#	where("releasing_on >= ?", Time.now).order("releasing_on").order("name")
-	#end
-
-	#def self.just_released
-	#	where("releasing_on <= ?", Time.now).order("releasing_on").order("name")
-	#end
 
 
 end

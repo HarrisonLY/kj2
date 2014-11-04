@@ -1,37 +1,38 @@
 <%= form_for(@product) do |f| %>
   <%= render "shared/errors", object: @product %>
 
+
 <form class="form-horizontal" role="form">
     <div class="form-group">
     <ol>
       <li class="required">
-          <%= f.label :name %><br/>
+          <%= f.label :name, "Product Name" %><br/>
           <%= f.text_field :name %>
       </li>
       <% unless @product.new_record? %>
         <li>
-          <%= f.label :slug %>
+          <%= f.label :slug, "URL" %>
           <%= f.text_field :slug, size: 30 %>
         </li>
       <% end %>
       <li class="required">
-          <%= f.label :category %><br/>
+          <%= f.label :category, "Category" %><br/>
           <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
       </li>
       <li class=>
-          <%= f.label :releasing_on %><br/>
+          <%= f.label :releasing_on, "Release Date" %><br/>
           <%= f.date_field :releasing_on %>
       </li>
       <li class=>
-        <%= f.label :price %><br/>
+        <%= f.label :price, "Price" %><br/>
         <%= f.number_field :price %>
       </li>
       <li class>
-          <%= f.label :description %><br/>
+          <%= f.label :description, "Overview (800 character maximum)" %><br/>
           <%= f.text_area :description, cols: 60, rows: 8 %>
       </li>
       <li class=>
-          <%= f.label :website %><br/>
+          <%= f.label :website, "Website" %><br/>
           <%= f.text_field :website %>
       </li>
       <li class=> 

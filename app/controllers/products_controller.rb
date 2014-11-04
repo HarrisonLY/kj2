@@ -16,9 +16,9 @@ def index
   end
 
 
- #   if current_user
- #      @current_clock = current_user.clocks.find_by(product_id: @product.id)
- #  end
+#    if current_user
+#       @current_clock = current_user.clocks.find_by(product_id: @product.id)
+#   end
 end
 
 def show
