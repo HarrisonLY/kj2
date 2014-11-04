@@ -16,20 +16,18 @@
 </header>
 
 
-<br><br>
-<br>
 
    <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px;">
-    <div class="row">
+    <div class="row" style="padding-top:90px; ">
     <% @products.each do |product| %>
      <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="padding-bottom: 3%;height: 302px;">
        <span style="text-align: center !important;"> <%= link_to(product.name, product_path(product)) %> </span> 
 
-
-       <a class="thumbnail" href="" style="margin-bottom: 0px;"> 
-        <img class="img-responsive"> <%= image_for(product) %> 
-    </a>
-
+        <%= link_to product do %>
+         <div class="thumbnail" style="margin-bottom: 0px;"> 
+          <img class="img-responsive"> <%= image_for(product) %> 
+         </div>
+        <% end %>
 
           <div style="position: absolute; padding-left: 64%; padding-top: 10px;">
             <% if current_user %>
