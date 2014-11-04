@@ -20,6 +20,10 @@
           <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
       </li>
       <li class=>
+          <%= f.label :company, "Company" %><br/>
+          <%= f.text_field :company %>
+      </li>
+      <li class=>
           <%= f.label :releasing_on, "Release Date" %><br/>
           <%= f.date_field :releasing_on %>
       </li>
