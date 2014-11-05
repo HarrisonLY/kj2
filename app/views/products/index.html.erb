@@ -1,8 +1,8 @@
-<header style="background: #F0F0F0; position: fixed; width: 100%; z-index: 3; height: 48px;">
+<header style="background: #F0F0F0; position: fixed; width: 100%; z-index: 2; height: 60px; border-bottom: 1px solid rgb(224, 224, 224);">
 
-<div class="row" style="margin-right: 0px; margin-left: 0px; border-bottom: 1px solid rgb(224, 224, 224);">
+<div class="row" style="margin-right: 0px; margin-left: 0px;">
 <div class="span12 centered-pills">  
-<nav> 
+<nav style="padding-top: 10px;"> 
 <ul class="nav nav-pills">
   <li><%= link_to 'Trending', filtered_products_path(:trending) %></li>
   <li><%= link_to 'Releasing Soon', filtered_products_path(:upcoming) %></li>
