@@ -3,11 +3,8 @@ class ClocksController < ApplicationController
 	before_action :set_product
 
 def create
-  if @product
 	@product.clocks.create!(user: current_user)  
 	redirect_to @product
-  else redirect_to products_url
-end
 end
 
 def destroy

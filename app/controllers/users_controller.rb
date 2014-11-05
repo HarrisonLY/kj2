@@ -12,11 +12,14 @@ end
   helper_method :sort_column, :sort_direction
 def show
   @user = User.find(params[:id])
+#  @product = Product.find(params[:id])
   @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
   
 
    if current_user
-      @current_clock = current_user.clocks.find_by(user_id: @user.id)
+ #     @current_clock = current_user.clocks.find_by(product_id: @product)
+ #     @current_clock = current_user.clocks.find_by(product_id: @product.id)
+      @current_clock = current_user.clocks.find_by(user_id: @user.id,)
    end
 end
 
@@ -58,6 +61,11 @@ private
 def user_params
   params.require(:user).permit(:first_name, :last_name, :email, :born_in, :gender, :password, :password_confirmation)
 end
+
+
+    def product_params
+      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, :total_clocks, category_ids: [])
+    end
 
   def require_correct_user
     @user = User.find(params[:id])
