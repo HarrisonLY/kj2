@@ -32,7 +32,7 @@
           <div style="position: absolute; padding-left: 64%; padding-top: 10px;">
             <% if current_user %>
               <% if @current_clock %>
-              <%= button_to "UnClock", product_clock_path(product, @current_clock), method: :delete %>
+              <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
             <% else %>
               <%= button_to "Clock", product_clocks_path(product) %>
               <% end %>
