@@ -57,6 +57,8 @@ class Product < ActiveRecord::Base
 		self.slug ||= name.parameterize if name
 	end
 
-
+#	def total_clocks
+#		clocks.size = total_clocks
+#	end 
 
 end

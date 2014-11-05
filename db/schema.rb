@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141104200954) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "company"
+    t.integer  "total_clocks"
   end
 
 # Could not dump table "users" because of following NoMethodError
