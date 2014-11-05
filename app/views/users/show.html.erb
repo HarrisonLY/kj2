@@ -36,7 +36,11 @@
         <td> <%= link_to product.name, product %> </td>
         <td> <%= format_releasing_on(product) %> </td>
         <td> <span style="color: red;"> <%= format_releasing_on_remaining(product) %> </span>  </td>
-        <td> <%= link_to "UnClock", product_clock_path(product, @current_clock), method: :delete %> <%= product.id %> </td>
+        <td> 
+    <% if @current_clock %> 
+          <%= link_to "UnClock", product_clock_path(product, @current_clock), method: :delete %> 
+    <% end %> 
+        </td>
       </tr>
     <% end %>
   </tbody>
