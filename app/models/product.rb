@@ -34,7 +34,7 @@ class Product < ActiveRecord::Base
     scope :trending, -> { joins(:clocks).group("#{Product.table_name}.id").where("releasing_on >= ?", Time.now).order("count(clocks.product_id) desc").order("name") }
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
     scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
-	scope :tba, -> { where(releasing_on: nil).order(:name) }
+	scope :tba, -> { where(releasing_on: nil).order('random()') }
 
 
 	def tbd?
