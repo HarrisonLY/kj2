@@ -32,6 +32,7 @@ class Product < ActiveRecord::Base
 
 
 	scope :trending, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
+ #   scope :trending, -> { joins(:clocks).where("releasing_on >= ?", Time.now).order("total_clocks desc") }
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
     scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
 	scope :tba, -> { where(releasing_on: nil).order(:name) }

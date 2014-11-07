@@ -28,12 +28,16 @@
          </div>
         <% end %>
 
-          <div style="position: absolute; padding-left: 64%; padding-top: 10px;">
+          <div style="position: absolute; padding-left: 80%; padding-top: 10px;">
             <% if current_user %>
               <% if current_user.clocks.find_by(product_id: product.id) %>
-              <%= button_to "UnClock", product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete %>
+              <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete do %>
+             <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
+              <% end %> 
             <% else %>
-              <%= button_to "Clock", product_clocks_path(product) %>
+              <%= button_to product_clocks_path(product) do %>  
+            <i class="glyphicon glyphicon-time" style= "color:black;"> </i>
+              <% end %> 
               <% end %>
             <% end %>
           </div> 

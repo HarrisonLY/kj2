@@ -24,10 +24,16 @@
           <div style="position: absolute; padding-left:180px; padding-top: 9px;"> 
     <% if current_user %>
     <% if @current_clock %> 
-      <%= button_to "UnClock", product_clock_path(@product, @current_clock), method: :delete %>
+      <%= button_to product_clock_path(@product, @current_clock), method: :delete do%>
+       <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
+        <% end %> 
     <% else %>
-      <%= button_to "Clock", product_clocks_path(@product) %>
+      <%= button_to product_clocks_path(@product) do %>
+      <i class="glyphicon glyphicon-time" style= "color:black;"> </i>
     <% end %> 
+    <% end %> 
+
+
           </div> 
          <div style="font-size: 17px; padding-left: 18px;padding-top: 11px; height: 45px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; background-color: rgb(115, 145, 192);color: white;">
      <%= format_releasing_on(@product) %> - <span style="color: black;"> <%= format_releasing_on_remaining(@product) %> </span>  </div>
