@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 def index
- # @product = Product.find(params[:id])   tried this instead of set_product
+  @product = Product.find_by(params[:id]) #  tried this instead of @product = Product.find_by!(slug: params[:id])
 
   case params[:scope] 
   when 'past'
@@ -18,9 +18,9 @@ def index
   end
 
 
-#    if current_user
-#       @current_clock = current_user.clocks.find_by(product_id: @product.id)
-#   end
+ #   if current_user
+ #      @current_clock = current_user.clocks.find_by(product_id: @product.id)
+ #  end
 end
 
 def show
