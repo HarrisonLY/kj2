@@ -16,11 +16,11 @@ def show
   @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
   
 
-   if current_user
+ #  if current_user
  #     @current_clock = current_user.clocks.find_by(product_id: @product)
  #     @current_clock = current_user.clocks.find_by(product_id: @product.id)
-      @current_clock = current_user.clocks.find_by(user_id: @user.id)
-   end
+ #     @current_clock = current_user.clocks.find_by(user_id: @user.id)
+ #   end
 end
 
 
