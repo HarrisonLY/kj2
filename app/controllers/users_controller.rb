@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only: [:show, :edit, :update]
+  before_action :require_correct_user, only: [:show, :image, :edit, :update]
   before_action :require_admin, only: [:index, :destroy]
 
 def index
@@ -12,16 +12,14 @@ end
   helper_method :sort_column, :sort_direction
 def show
   @user = User.find(params[:id])
-#  @product = Product.find(params[:id])
   @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
-  
 
- #  if current_user
- #     @current_clock = current_user.clocks.find_by(product_id: @product)
- #     @current_clock = current_user.clocks.find_by(product_id: @product.id)
- #     @current_clock = current_user.clocks.find_by(user_id: @user.id)
- #   end
 end
+
+#def image
+#    @user = User.find(params[:id])
+#    @clocked_products = @user.clocked_products
+#end
 
 
 def new

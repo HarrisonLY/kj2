@@ -22,13 +22,15 @@ Kijovo::Application.routes.draw do
 
     resources :categories
 
-     resources :users
+#    get "users/filter/:scope" => "users#show", as: :filtered_users
+
+     resources :users 
      get 'signup' => 'users#new'
      post 'users_create' => 'users#create'
      get 'users/general'
      get 'users/notifications'
      get 'users/help'
-     #get 'timecard' => 'users#show'     
+     get 'timecard' => 'users#show'     
     
 
      resource :session
