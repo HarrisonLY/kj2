@@ -6,7 +6,7 @@ def create
   @product = Product.find_by!(slug: params[:product_id]) 
 	@product.clocks.create!(user: current_user)  
 
-	redirect_to @product
+	redirect_to(:back)
 end
 
 def destroy
@@ -14,7 +14,7 @@ def destroy
   clock = current_user.clocks.find(params[:id])
 
   clock.destroy
-  redirect_to @product
+  redirect_to(:back)
 end
 
 
