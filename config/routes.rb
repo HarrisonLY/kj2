@@ -5,7 +5,6 @@ Kijovo::Application.routes.draw do
       get 'welcome/about'
       get 'welcome/terms'
       get 'welcome/contact'
-
       get 'welcome/rights'
       get 'welcome/data'
       get 'welcome/cookies'
@@ -15,29 +14,27 @@ Kijovo::Application.routes.draw do
 
 
     get "products/filter/:scope" => "products#index", as: :filtered_products
-
     resources :products do
       resources :clocks
     end
 
-    resources :categories
 
-#    get "users/filter/:scope" => "users#show", as: :filtered_users
-
-     resources :users 
+#     get 'users/filter/:id' => 'users#image' as: :filtered_users
+     resources :users  
+     get 'users/image/:id' => 'users#image', as: :users_image
      get 'signup' => 'users#new'
      post 'users_create' => 'users#create'
-     get 'users/general'
-     get 'users/notifications'
-     get 'users/help'
-     get 'timecard' => 'users#show'     
+
     
 
      resource :session
      get 'signin' => 'sessions#new'
 
-    get 'settings/general'
-    get 'settings/notifications'
-    get 'settings/help'
-	
+     get 'settings/general'
+     get 'settings/notifications'
+     get 'settings/help'
+
+
+     resources :categories
+
 end

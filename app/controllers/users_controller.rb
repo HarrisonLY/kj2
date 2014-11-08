@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
 def index
   @users = User.all
-
 end
 
 
@@ -13,18 +12,19 @@ end
 def show
   @user = User.find(params[:id])
   @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
-
 end
 
-#def image
-#    @user = User.find(params[:id])
-#    @clocked_products = @user.clocked_products
-#end
+
+def image
+  @filtered_users = User.find(params[:id])
+  @clocked_products = @user.clocked_products
+end
 
 
 def new
   @user = User.new
 end
+
 
 def create
   @user = User.new(user_params)
@@ -36,8 +36,10 @@ def create
   end 
 end
 
+
 def edit
 end
+
 
 def update
   if @user.update(user_params)
@@ -48,11 +50,13 @@ def update
   end
 end
 
+
 def destroy
   @user = User.find(params[:id])
   @user.destroy
   redirect_to root_url, alert: "Account successfully deleted!"
 end
+
 
 private
 
