@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
 
 def index
   @product = Product.find_by(params[:id]) #  tried this instead of @product = Product.find_by!(slug: params[:id])
+  @categories = Category.all
+
 
   case params[:scope] 
   when 'past'
