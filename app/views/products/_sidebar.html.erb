@@ -11,7 +11,7 @@
     </li>
     
       <% @categories.each do |category| %>
-        <li><%= category.name %></li>
+        <li> <%= link_to category.name  %> </li>
       <% end %>
 
 
