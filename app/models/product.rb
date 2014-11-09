@@ -26,15 +26,15 @@ class Product < ActiveRecord::Base
     has_attached_file :picture6
     has_attached_file :picture7
     has_attached_file :picture8
+    has_attached_file :picture9
 
-    has_attached_file :picture9,
-    :styles => {
-      :thumb=> "100x100>",
-      :small  => "150x150>",
-      :medium => "300x300>",
-      :large =>   "400x400>", 
-      :gallery => "500x500>" }
-  validates_attachment :picture, content_type: { content_type: ["picture/jpg", "picture/jpeg", "picture/png", "picture/gif"] }
+#    :styles => {
+#      :thumb=> "100x100>",
+#      :small  => "150x150>",
+#      :medium => "300x300>",
+#      :large =>   "400x400>", 
+#      :gallery => "500x500>" }
+#  validates_attachment :picture, content_type: { content_type: ["picture/jpg", "picture/jpeg", "picture/png", "picture/gif"] }
 
 
 
