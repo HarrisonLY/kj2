@@ -14,12 +14,10 @@ def show
   @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
 end
 
-
 def image
   @filtered_users = User.find(params[:id])
   @clocked_products = @user.clocked_products
 end
-
 
 def new
   @user = User.new
@@ -66,7 +64,7 @@ end
 
 
     def product_params
-      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, :total_clocks, category_ids: [])
+      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, category_ids: [])
     end
 
   def require_correct_user

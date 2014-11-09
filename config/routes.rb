@@ -24,7 +24,6 @@ Kijovo::Application.routes.draw do
      get 'users/image/:id' => 'users#image', as: :users_image
      get 'signup' => 'users#new'
      post 'users_create' => 'users#create'
-
     
 
      resource :session
