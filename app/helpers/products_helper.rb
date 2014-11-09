@@ -36,5 +36,12 @@ def image_for(product)
   end
 end
 
+def picture_for(product)
+  if product.picture.exists?
+    image_tag(product.picture.url)
+  else
+    ""
+  end
+end
 
 end

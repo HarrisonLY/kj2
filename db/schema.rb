@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104200954) do
+ActiveRecord::Schema.define(version: 20141108212848) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -54,7 +54,10 @@ ActiveRecord::Schema.define(version: 20141104200954) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "company"
-    t.integer  "total_clocks"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 # Could not dump table "users" because of following NoMethodError

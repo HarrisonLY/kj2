@@ -44,6 +44,10 @@
           <%= f.label :image, "Profile Picture" %>
           <%= f.file_field :image %>
       </li>
+      <li class=> 
+          <%= f.label :picture, "More Pictures" %>
+          <%= f.file_field :picture, multiple: true %> 
+      </li>
     </ol>
     <p>
       <%= f.submit %>

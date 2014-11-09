@@ -19,7 +19,7 @@ Kijovo::Application.routes.draw do
     end
 
 
-#     get 'users/filter/:id' => 'users#image' as: :filtered_users
+
      resources :users  
      get 'users/image/:id' => 'users#image', as: :users_image
      get 'signup' => 'users#new'

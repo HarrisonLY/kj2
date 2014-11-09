@@ -4,21 +4,17 @@
 <div id="sidebar-wrapper">
   <ul class="sidebar-nav">
     <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="glyphicon glyphicon-remove"></i></a>
+  
+
     <li class="sidebar-brand">
-
-
       <a href="/products">All</a>
     </li>
-    
       <% @categories.each do |category| %>
         <li> <%= link_to category.name  %> </li>
       <% end %>
 
 
-
   </ul>
-
-
 </div>
   </nav>
 </aside>

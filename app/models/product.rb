@@ -8,20 +8,24 @@ class Product < ActiveRecord::Base
 	validates :description, length: {maximum: 800}
 
 
-#	validates :image_file_name, allow_blank: true, format: {
-# 	 with:    /\w+.(gif|jpg|png)\z/i,
-# 	 message: "must reference a GIF, JPG, or PNG image"
-#	}
-
 
 	do_not_validate_attachment_file_type :image
-
+	has_attached_file :image
 #	validates_attachment :image, 
 #	:content_type => { :content_type => ['image/jpeg', 'image/png'] },
 #	:size => { :less_than => 10.megabyte }
 
 
-	has_attached_file :image
+#    do_not_validate_attachment_file_type :picture
+    has_attached_file :picture
+#    :styles => {
+#      :thumb=> "100x100#",
+#      :small  => "150x150>",
+#      :medium => "300x300>",s
+#      :large =>   "400x400>" }
+#  validates_attachment :picture, content_type: { content_type: ["picture/jpg", "picture/jpeg", "picture/png", "picture/gif"] }
+#end
+
 
 
     has_many :clocks, dependent: :destroy
@@ -35,6 +39,8 @@ class Product < ActiveRecord::Base
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
     scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
 	scope :tba, -> { where(releasing_on: nil).order('random()') }
+	scope :newest, -> { last(20).reverse }
+
 
 
 	def tbd?
@@ -56,9 +62,5 @@ class Product < ActiveRecord::Base
 	def generate_slug
 		self.slug ||= name.parameterize if name
 	end
-
-#	def total_clocks
-#		clocks.size = total_clocks
-#	end 
 
 end

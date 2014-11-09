@@ -15,6 +15,8 @@ def index
     @products = Product.upcoming
   when 'tba'
     @products = Product.tba
+  when 'newest'
+    @products = Product.newest
   else
     @products = Product.trending
   end
@@ -65,7 +67,7 @@ end
 private
 
     def product_params
-      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, :total_clocks, category_ids: [])
+      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, :picture, :picture_content_type, :pictures, :pictures_content_type, category_ids: [])
     end
 
   def set_product
