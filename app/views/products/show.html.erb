@@ -60,7 +60,7 @@
 
 
 
-
+<% if @product.picture? %> 
 
 <html lang="en">
 <head>
@@ -73,10 +73,12 @@
 .item{
     background: #333;    
     text-align: center;
-    height: 450px !important;
+    height: 350px !important;
 }
 .carousel{
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .bs-example{
   margin: 20px;
@@ -94,50 +96,101 @@
     <div id="myCarousel" class="carousel slide" data-interval="100000" data-ride="carousel">
       <!-- Carousel indicators -->
         <ol class="carousel-indicators">
+          <% if @product.picture? %> 
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <% end %>
+          <% if @product.picture1? %> 
             <li data-target="#myCarousel" data-slide-to="1"></li>
+          <% end %>
+          <% if @product.picture2? %> 
             <li data-target="#myCarousel" data-slide-to="2"></li>
+          <% end %>
+          <% if @product.picture3? %> 
             <li data-target="#myCarousel" data-slide-to="3"></li>
+          <% end %>
+          <% if @product.picture4? %> 
             <li data-target="#myCarousel" data-slide-to="4"></li>
+          <% end %>
+          <% if @product.picture5? %> 
             <li data-target="#myCarousel" data-slide-to="5"></li>
+          <% end %>
+          <% if @product.picture6? %> 
             <li data-target="#myCarousel" data-slide-to="6"></li>
+          <% end %>
+          <% if @product.picture7? %> 
             <li data-target="#myCarousel" data-slide-to="7"></li>
+          <% end %>
+          <% if @product.picture8? %> 
             <li data-target="#myCarousel" data-slide-to="8"></li>
+          <% end %>
+          <% if @product.picture9? %> 
             <li data-target="#myCarousel" data-slide-to="9"></li>
+          <% end %>
+
         </ol>   
        <!-- Carousel items -->
         <div class="carousel-inner">
+          <% if @product.picture? %> 
             <div class="active item">
               <%= picture_for(@product) %> 
             </div>
+          <% end %>
+
+          <% if @product.picture1? %> 
             <div class="item">
               <%= picture1_for(@product) %> 
             </div>
+          <% end %>
+
+          <% if @product.picture2? %> 
             <div class="item">
               <%= picture2_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture3? %> 
             <div class="item">
               <%= picture3_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture4? %> 
             <div class="item">
               <%= picture4_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture5? %> 
             <div class="item">
               <%= picture5_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture6? %> 
             <div class="item">
               <%= picture6_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture7? %> 
             <div class="item">
               <%= picture7_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture8? %> 
             <div class="item">
               <%= picture8_for(@product) %>  
             </div>
+          <% end %>
+
+          <% if @product.picture9? %> 
             <div class="item">
               <%= picture9_for(@product) %>  
             </div>
+          <% end %>
         </div>
+
         <!-- Carousel nav -->
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
@@ -151,7 +204,7 @@
 </html>                                   
 
 
-
 </div>
+<% end %> 
 
 </article>
