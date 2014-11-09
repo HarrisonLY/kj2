@@ -67,7 +67,7 @@ end
 private
 
     def product_params
-      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, :picture, :picture_content_type, :pictures, :pictures_content_type, category_ids: [])
+      params.require(:product).permit(:slug, :name, :description, :price, :releasing_on, :website, :company, :image, :image_content_type, :picture, :picture_content_type, :picture1, :picture1_content_type, :picture2, :picture2_content_type, :picture3, :picture3_content_type, :picture4, :picture4_content_type, :picture5, :picture5_content_type, :picture6, :picture6_content_type, :picture7, :picture7_content_type, :picture8, :picture8_content_type, :picture9, :picture9_content_type, category_ids: [])
     end
 
   def set_product

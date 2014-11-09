@@ -18,6 +18,16 @@ class Product < ActiveRecord::Base
 
 #    do_not_validate_attachment_file_type :picture
     has_attached_file :picture
+    has_attached_file :picture1
+    has_attached_file :picture2
+    has_attached_file :picture3
+    has_attached_file :picture4
+    has_attached_file :picture5
+    has_attached_file :picture6
+    has_attached_file :picture7
+    has_attached_file :picture8
+    has_attached_file :picture9
+
 #    :styles => {
 #      :thumb=> "100x100#",
 #      :small  => "150x150>",
@@ -34,6 +44,7 @@ class Product < ActiveRecord::Base
     has_many :categorizations, dependent: :destroy
     has_many :categories, through: :categorizations
 
+#    has_many :pictures, dependent: :destroy
 
     scope :trending, -> { joins(:clocks).group("#{Product.table_name}.id").where("releasing_on >= ?", Time.now).order("count(clocks.product_id) desc").order("name") }
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
