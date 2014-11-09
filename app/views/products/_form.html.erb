@@ -43,46 +43,77 @@
       <li class=> 
           <%= f.label :image, "Profile Picture" %>
           <%= f.file_field :image %>
+
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture, "More Pictures (1)" %>
           <%= f.file_field :picture %> 
+          <% if @product.picture? %> 
+              <%= picture_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture1, "More Pictures (2)" %>
           <%= f.file_field :picture1 %> 
+          <% if @product.picture1? %> 
+              <%= picture1_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture2, "More Pictures (3)" %>
           <%= f.file_field :picture2 %> 
+          <% if @product.picture2? %> 
+              <%= picture2_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture3, "More Pictures (4)" %>
           <%= f.file_field :picture3 %> 
+          <% if @product.picture3? %> 
+              <%= picture3_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture4, "More Pictures (5)" %>
           <%= f.file_field :picture4 %> 
+          <% if @product.picture4? %> 
+              <%= picture4_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture5, "More Pictures (6)" %>
           <%= f.file_field :picture5 %> 
+          <% if @product.picture5? %> 
+              <%= picture5_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture6, "More Pictures (7)" %>
           <%= f.file_field :picture6 %> 
+          <% if @product.picture6? %> 
+              <%= picture6_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture7, "More Pictures (8)" %>
           <%= f.file_field :picture7 %> 
+          <% if @product.picture7? %>
+              <%= picture7_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture8, "More Pictures (9)" %>
           <%= f.file_field :picture8 %> 
+          <% if @product.picture8? %> 
+              <%= picture8_for(@product) %> 
+          <% end %>
       </li>
-      <li class=> 
+      <li>
           <%= f.label :picture9, "More Pictures (10)" %>
           <%= f.file_field :picture9 %> 
+          <% if @product.picture9? %> 
+              <%= picture9_for(@product) %> 
+          <% end %>
       </li>
     </ol>
     <p>
@@ -91,8 +122,6 @@
     </p>
 <% end %>
 </form>
-
-
 
 
 

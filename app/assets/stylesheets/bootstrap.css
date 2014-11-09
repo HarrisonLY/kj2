@@ -16,6 +16,12 @@ body {
   padding-bottom: 50px;
 }
 
+.edit_picture {
+width: 100px;
+height: 100px;
+}
+
+
 article,
 aside,
 details,
