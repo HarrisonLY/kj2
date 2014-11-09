@@ -21,7 +21,9 @@ gem "paperclip", "~> 4.2"
 
 gem 'aws-sdk'
 
-gem 'rambling-slider-rails'
+# gem 'rambling-slider-rails'
+     # slider i didnt use
+
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
