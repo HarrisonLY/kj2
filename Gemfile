@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.10'
+gem 'rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -21,9 +21,8 @@ gem "paperclip", "~> 4.2"
 
 gem 'aws-sdk'
 
-# gem 'rambling-slider-rails'
-     # slider i didnt use
 
+gem 'gibbon'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
