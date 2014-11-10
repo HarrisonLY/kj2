@@ -25,6 +25,7 @@ def create
   if @user.save
     session[:user_id] = @user.id
     redirect_to users_tutorial_url (@user)
+
   else
     render :new
   end 
