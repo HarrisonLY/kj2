@@ -16,6 +16,7 @@
 /tmp
 
 # Ignore all config files
-config/amazon_s3.yml
-config/database.yml
-config/secrets.yml  
+config/amazon_s3.yml 
+config/database.yml 
+config/secrets.yml   
+ 
