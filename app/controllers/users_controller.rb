@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
   before_action :require_correct_user, only: [:show, :edit, :update, :image, :tutorial]
+#  before_action :require_correct_user_admin, only: [:show]
   before_action :require_admin, only: [:index, :destroy]
 
 def index
@@ -77,6 +78,13 @@ end
     @user = User.find(params[:id])
       redirect_to products_url unless current_user? (@user)
     end
+
+  def require_correct_user_admin
+    @user = User.find(params[:id])
+     redirect_to products_url unless current_user_admin? (@user)
+    end
+
+
 
       def sort_column
     Product.column_names.include?(params[:sort]) ? params[:sort] : "releasing_on"
