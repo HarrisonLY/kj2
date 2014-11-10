@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only: [:show, :image, :edit, :update]
+  before_action :require_correct_user, only: [:show, :edit, :update, :image, :tutorial]
   before_action :require_admin, only: [:index, :destroy]
 
 def index
@@ -12,11 +12,6 @@ end
 def show
   @user = User.find(params[:id])
   @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
-end
-
-def image
-  @filtered_users = User.find(params[:id])
-  @clocked_products = @user.clocked_products
 end
 
 def new
@@ -53,6 +48,18 @@ def destroy
   @user = User.find(params[:id])
   @user.destroy
   redirect_to root_url, alert: "Account successfully deleted!"
+end
+
+
+def image
+  @filtered_users = User.find(params[:id])
+  @clocked_products = @user.clocked_products
+end
+
+
+def tutorial
+
+
 end
 
 

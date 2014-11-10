@@ -20,10 +20,11 @@ Kijovo::Application.routes.draw do
 
 
 
-     resources :users  
+     resources :users
      get 'users/image/:id' => 'users#image', as: :users_image
      get 'signup' => 'users#new'
-     post 'users_create' => 'users#create'
+     post 'users_create' => 'users# create'
+     get 'users/tutorial/:id' => 'users#tutorial', as: :users_tutorial
     
 
      resource :session
