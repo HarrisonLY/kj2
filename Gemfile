@@ -22,7 +22,12 @@ gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 
 
-gem 'gibbon'
+gem 'gibbon', github: "amro/gibbon"
+gem 'sucker_punch', '~> 1.0'
+
+gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+
+gem 'mailchimp-api', '~> 2.0.6'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

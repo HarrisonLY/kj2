@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only: [:show, :edit, :update, :image, :tutorial]
+  before_action :require_correct_user, only: [:edit, :update, :image, :tutorial]
 #  before_action :require_correct_user_admin, only: [:show]
   before_action :require_admin, only: [:index, :destroy]
 
@@ -30,6 +30,8 @@ def create
     render :new
   end 
 end
+
+
 
 
 def edit
@@ -64,6 +66,7 @@ def tutorial
 end
 
 
+
 private
 
 def user_params
@@ -85,6 +88,12 @@ end
      redirect_to products_url unless current_user_admin? (@user)
     end
 
+
+def subscribe
+  @user = User.find(params[:id])
+  @user.subscribe_to_mailchimp(true)
+  # redirect to some other url
+end
 
 
       def sort_column
