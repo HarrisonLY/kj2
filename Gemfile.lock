@@ -130,6 +130,9 @@ GEM
     json (1.8.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_form (1.5.0)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     mailchimp-api (2.0.6)
       excon (>= 0.16.0)
       json (>= 1.7.7)
@@ -186,6 +189,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_form (3.0.2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -229,6 +235,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-fileupload-rails
   jquery-rails
+  mail_form (~> 1.5.0.rc)
   mailchimp-api (~> 2.0.6)
   mini_magick (= 3.8.0)
   paperclip (~> 4.2)
@@ -237,6 +244,7 @@ DEPENDENCIES
   resque (~> 2.0.0.pre.1)!
   sass-rails (~> 4.0.2)
   sdoc
+  simple_form (~> 3.0.0.rc)
   sqlite3
   sucker_punch (~> 1.0)
   turbolinks
