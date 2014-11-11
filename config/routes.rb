@@ -12,6 +12,9 @@ Kijovo::Application.routes.draw do
       get 'welcome/privacy'
       get 'welcome/principles'
 
+      match '/contacts', to: 'contacts#new', via: 'get'
+      resources "contacts", only: [:new, :create]
+
 
     get "products/filter/:scope" => "products#index", as: :filtered_products
     resources :products do

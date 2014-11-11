@@ -1,0 +1,53 @@
+
+<%= render 'header' %>
+
+
+<h1 style="text-align: center;"> Contact Us</h1>
+
+
+  <% if current_user %>
+<ul class="nav nav-tabs" role="tablist" style="padding-left: 37%;">
+  <li><a href="/settings/general">General</a></li>
+  <li><a href="/settings/notifications">Notifications</a></li>
+  <li class="active"><a href="/contacts">Help</a></li>
+</ul>
+  <% end %>
+
+
+<br>
+<div class="container">
+  <div class="row">
+        <div class="well well-sm" style="width: 80%; margin-left: 10%; height: 338px;">
+         <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+          <fieldset>
+            <legend class="text-center" style="font-size: 16px;">How Can We Help You? </legend>
+
+            <!-- Name input-->
+            <div class="form-group" style="padding-left: 30px">
+                    <%= f.input :name, :required => true, :placeholder => "Name", autofocus: true %>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group" style="padding-left: 30px">
+                <%= f.input :email, :required => true, :placeholder => "Email" %>
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group" style="padding-left: 30px">
+                <%= f.input :message, :as => :text, :required => true, :placeholder => "Message" %>
+            </div>
+  
+            <!-- Form actions -->
+            <div class="form-group" style="padding-left: 30px">
+                <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+  <% end %>
+  </div>
+</div>
+
+
+<p class="text-center">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> </p>
+

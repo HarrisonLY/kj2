@@ -29,8 +29,8 @@ gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 
 gem 'mailchimp-api', '~> 2.0.6'
 
-gem 'mail_form', '~> 1.5.0.rc'
-gem 'simple_form', '~> 3.0.0.rc'
+gem 'mail_form'
+gem 'simple_form'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
