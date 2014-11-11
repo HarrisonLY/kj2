@@ -1,10 +1,11 @@
 Kijovo::Application.routes.draw do
 
+
     root "welcome#index"
     
       get 'welcome/about'
       get 'welcome/terms'
-      get 'welcome/contact'
+    #  get 'welcome/contact'
       get 'welcome/rights'
       get 'welcome/data'
       get 'welcome/cookies'
@@ -29,13 +30,14 @@ Kijovo::Application.routes.draw do
      post 'users_create' => 'users# create'
      get 'users/tutorial/:id' => 'users#tutorial', as: :users_tutorial
     
+    resources :password_resets
 
      resource :session
      get 'signin' => 'sessions#new'
 
      get 'settings/general'
      get 'settings/notifications'
-     get 'settings/help'
+  #   get 'settings/help'
 
 
      resources :categories

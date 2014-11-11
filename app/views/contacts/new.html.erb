@@ -22,25 +22,28 @@
           <fieldset>
             <legend class="text-center" style="font-size: 16px;">How Can We Help You? </legend>
 
+
             <!-- Name input-->
-            <div class="form-group" style="padding-left: 30px">
-                    <%= f.input :name, :required => true, :placeholder => "Name", autofocus: true %>
+            <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+                 <%= f.input :name, :required => true, :placeholder => "Name", autofocus: true, label: false %>
             </div>
 
             <!-- Email input-->
-            <div class="form-group" style="padding-left: 30px">
-                <%= f.input :email, :required => true, :placeholder => "Email" %>
+            <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+                <%= f.input :email, :required => true, :placeholder => "Email", label: false %>
             </div>
     
             <!-- Message body -->
-            <div class="form-group" style="padding-left: 30px">
-                <%= f.input :message, :as => :text, :required => true, :placeholder => "Message" %>
+            <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+                <%= f.input :message, :as => :text, :required => true, :placeholder => "Message", label: false %>
             </div>
   
             <!-- Form actions -->
-            <div class="form-group" style="padding-left: 30px">
+            <div class="form-group" style="padding-left: 5%">
                 <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
             </div>
+
+
           </fieldset>
           </form>
         </div>
@@ -50,4 +53,39 @@
 
 
 <p class="text-center">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> </p>
+
+ <%
+=begin %>
+
+            <!-- Name input-->
+            <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+            <%= f.input :name, :required => true, label: false do %>
+                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+            <% end  %>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+            <%= f.input :email, :required => true, label: false do %>
+                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+            <% end  %>
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+                <%= f.input :message, :as => :text, :required => true, label: false do %>
+                 <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+            <% end  %>
+            </div>
+  
+            <!-- Form actions -->
+            <div class="form-group" style="padding-left: 5%">
+                <%= f.button :submit, "Submit Message", :class=> "btn btn-primary" do %>
+                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+            <% end  %>
+            </div>
+
+
+<%
+=end %>
 
