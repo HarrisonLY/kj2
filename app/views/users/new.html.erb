@@ -5,3 +5,15 @@
 <%= render 'header' %>
 
 <%= render 'form' %>
+
+<div style="padding-top:5px;">
+<%= link_to "/auth/facebook", id: "sign_in" do %>
+<img alt="Facebook_Login" src="/assets/Facebook_Login.png" 
+style="width: 200px;
+position: fixed;
+margin: auto;          
+right: 0;
+left: 0;
+z-index: -1;">
+<% end %>
+</div>
