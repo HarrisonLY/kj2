@@ -29,6 +29,11 @@ Kijovo::Application.routes.draw do
      get 'signup' => 'users#new'
      post 'users_create' => 'users# create'
      get 'users/tutorial/:id' => 'users#tutorial', as: :users_tutorial
+
+
+    get 'auth/:provider/callback', to: 'sessions#create'
+    get 'auth/failure', to: redirect('/')
+    get 'signout', to: 'sessions#destroy', as: 'signout'
     
     resources :password_resets
 
@@ -37,7 +42,7 @@ Kijovo::Application.routes.draw do
 
      get 'settings/general'
      get 'settings/notifications'
-  #   get 'settings/help'
+  #  get 'settings/help'
 
 
      resources :categories

@@ -21,6 +21,7 @@ gem "paperclip", "~> 4.2"
 
 gem 'aws-sdk'
 
+gem 'omniauth-facebook'
 
 gem 'gibbon', github: "amro/gibbon"
 gem 'sucker_punch', '~> 1.0'
@@ -31,6 +32,8 @@ gem 'mailchimp-api', '~> 2.0.6'
 
 gem 'mail_form'
 gem 'simple_form'
+
+gem 'social-share-button'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

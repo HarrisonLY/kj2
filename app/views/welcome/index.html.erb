@@ -16,6 +16,7 @@ margin-top: 50px;">
 </h2>
 
 
+
 <img alt="Kijovo logo" src="/assets/Kijovo_logo.png" 
 style="width: 200px;
 position: absolute;
@@ -70,6 +71,7 @@ padding-left: 50px;">
 
 <% end %>
 
+
 <div style="position: absolute;right: 70px;top: 198px;">
 <%= form_tag(session_path) do %>
   <h4 style="text-align: center; font-size: 16px">LOG IN</h4>
@@ -101,4 +103,8 @@ padding-left: 50px;">
   </fieldset>
 <% end %>
 
+</div>
+
+<div>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 </div>

@@ -8,7 +8,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to(session[:intended_url] || products_path)
       session[:intended_url] = nil
-    else
+    elsif 
+    auth = request.env["omniauth.auth"]
+    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    redirect_to(session[:intended_url] || products_path)
+    session[:intended_url] = nil
+    else  
       flash.now[:alert] = "Invalid email/password combination!"
       render :new
   end
