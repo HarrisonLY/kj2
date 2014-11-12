@@ -60,17 +60,46 @@ padding-left: 50px;">
 <% if not current_user %>
 
 
+<a href="/signin" class="btn btn-primary" role="button" style="
+    right: 72px;
+    top: 222px;
+    bottom: auto;
+    margin-right: 0px;
+    padding-right: 97.5px;
+    padding-left: 97.5px;
+    background-color: rgb(0, 166, 0);
+    border-color: rgb(0, 166, 0);
+">Log In</a>
+
 <a href="/signup" class="btn btn-primary" role="button" style="
     right: 72px;
-    top: 360.5px;
+    top: 272px;
     bottom: auto;
     margin-right: 0px;
     padding-right: 92px;
     padding-left: 92px;
+    z-index: 100;
 ">Sign Up</a>
 
 <% end %>
 
+
+
+<hr style="border-top: 1px solid rgb(181, 181, 181); width: 275px; right: 55px; top: 304px; position: absolute;">
+
+
+<%= link_to "/auth/facebook", id: "sign_in" do %>
+<img alt="Facebook_Login" src="/assets/Facebook_Login.png" 
+style="width: 200px;
+position: fixed;     
+right: 90px;
+top: 282px;
+padding-top: 60px">
+<% end %>
+
+
+ <%
+=begin %>
 
 <div style="position: absolute;right: 70px;top: 198px;">
 <%= form_tag(session_path) do %>
@@ -103,9 +132,8 @@ padding-left: 50px;">
   </fieldset>
 <% end %>
 
+
 </div>
 
-<div>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-</div>
-
+<%
+=end %>
