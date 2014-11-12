@@ -33,7 +33,6 @@ gem 'mailchimp-api', '~> 2.0.6'
 gem 'mail_form'
 gem 'simple_form'
 
-gem 'social-share-button'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
