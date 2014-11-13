@@ -16,13 +16,37 @@
     <h1 style="text-align: center; font-size: 18px; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 9%; background-color: rgb(81, 81, 81);color: white;"> <%= @product.name %> </h1> 
   </header>
 
-<br>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=584095781694269&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="#{request.original_url}" data-layout="button"></div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="medium" data-annotation="none"></div>
+
+
 
     <div class="container">
     <div class="row">
       <div class="col-md-4 thumb" style="padding-bottom: 0px;">
         <div class="thumbnail" style="position: absolute; width: 270px;"> 
-        <img class="img-responsive"> <%= image_for(@product) %>
+       <img class="img-responsive"> <%= image_for(@product) %>
           <div style="position: absolute; padding-left:180px; padding-top: 9px;"> 
     <% if current_user %>
     <% if @current_clock %> 
@@ -34,6 +58,8 @@
       <i class="glyphicon glyphicon-time" style= "color:black;"> </i>
     <% end %> 
     <% end %> 
+
+
 
 
           </div> 
