@@ -1,0 +1,9 @@
+<div>
+<% flash.each do |key, value| %>
+   <div>
+   <br> <br>
+   <a href="#" data-dismiss="alert" style="margin-left: 10%;">X 
+   <%= content_tag(:p, value, :class => "flash #{key}") %> </a>
+    </div>
+<% end %>
+</div>

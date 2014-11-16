@@ -4657,11 +4657,45 @@ a.thumbnail.active {
   padding: 9px;
   color: #333;
 }
+
+/* FLASHES */
+
+.flash {
+  color: #444;
+
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgb(133, 250, 133);
+  font-weight: 600;
+  z-index: 10000000;
+  margin-left: 10%;
+  margin-right: 10%;
+  }  
+
+  &.notice {
+
+    background-color: #DBFFDD;
+  }
+
+  &.alert {
+    background-color: #FFE1DE;
+  }
+}
+
+/* ERRORS */
+
+section#errors {
+  margin: 1em 0;
+  padding: 1em;
+  background: #FFC;
+}
+
 .alert {
-  padding: 100px;
-  margin-bottom: 20px;
+  padding: 10px;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: #FFE1DE;
 }
 .alert h4 {
   margin-top: 0;

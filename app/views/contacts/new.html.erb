@@ -1,9 +1,9 @@
 
 <%= render 'header' %>
 
-<br>
+
 <% if not current_user %>
-<br>
+<br> 
 <h1  style="text-align: center;"> Contact Us </h1>
 
 <div id="fb-root"></div>
@@ -22,6 +22,7 @@
   <% end %>
 
   <% if current_user %>
+  <br> 
 <div class="row" style="margin-right: 0px; margin-left: 0px;">
 <div class="span12 centered-pills" style="padding-top: 50px;">  
 <ul class="nav nav-pills" role="tablist">
