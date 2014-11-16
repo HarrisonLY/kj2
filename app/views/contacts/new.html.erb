@@ -1,7 +1,10 @@
+
 <%= render 'header' %>
 
-
-
+<br>
+<% if not current_user %>
+<br>
+<h1  style="text-align: center;"> Contact Us </h1>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -13,12 +16,9 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="container" style="display: block; margin-right: auto; margin-left: auto; height: 22px !important; width: 93px !important; overflow: hidden !important; ">
-<div class="fb-like" data-href="https://kijovo.com" data-layout="button" data-action="like" data-show-faces="false" data-share="true"> 
+<div class="fb-like" data-href="http://facebook.com/kijovo" data-layout="button" data-action="like" data-show-faces="false" data-share="true"> 
 </div>
 </div>
-
-<% if not current_user %>
-<h1  style="text-align: center;"> Contact Us </h1>
   <% end %>
 
   <% if current_user %>
@@ -35,49 +35,93 @@
   <% end %>
 
 <div class="container">
+
   <div class="row">
-   <div style="border:1px solid black; height: 300px; width: 70%; margin-top:20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-right:auto; margin-left:auto">
+
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+    <div style="border:1px solid rgb(190, 190, 190); height: 300px; width: 75%; margin-top:20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-right:auto; margin-left:auto">
+     <fieldset>
+       <div class="text-center" style="font-size: 18px; margin-top: 12px">Please submit your comments, questions, or concerns below.
+       </div>
+
+            <!-- Name input-->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%; margin-top: 12px">
+              <input id="contact_name" name="contact[name]" type="text" placeholder="Your name" class="form-control" required="required" autofocus="autofocus" aria-required="true">
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
+              <input aria-required="true" id="contact_email" name="contact[email]" type="email"placeholder="Your email" class="form-control" required="required">
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
+              <textarea aria-required="true" class="form-control" id="contact_message" name="contact[message]" placeholder="Please enter your message here..." rows="3.5" required="required"></textarea>
+            </div>
+  
+            <!-- Form actions -->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
+                <input style="width: 100px;" class="btn btn-primary btn-sm" name="commit" type="submit" value="Send message">
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  <% end %>
+  <br>
+    <div class="text-center">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> 
+  </div>
+</div>
+
+
+ <%
+=begin %>
+
+
+<div class="container">
+
+  <div class="row">
+
          <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+            <div style="border:1px solid rgb(190, 190, 190); height: 300px; width: 82%; margin-top:20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-right:auto; margin-left:auto">
           <fieldset>
             <div class="text-center" style="font-size: 18px; margin-top: 12px">Please submit your comments, questions, or concerns below.
             </div>
 
 
             <!-- Name input-->
-            <div class="form-group" style="padding-left: 10%; padding-right: 10%; margin-top: 12px">
+            <div class="form-group" style="padding-left:10%; padding-right: 10%; margin-top: 12px">
                  <%= f.input :name, :required => true, :placeholder => "Name", autofocus: true, label: false %>
             </div>
 
             <!-- Email input-->
-            <div class="form-group" style="padding-left: 10%; padding-right: 10%;">
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
                 <%= f.input :email, :required => true, :placeholder => "Email", label: false %>
             </div>
     
             <!-- Message body -->
-            <div class="form-group" style="padding-left: 10%; padding-right: 10%;">
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
                 <%= f.input :message, :as => :text, :required => true, :placeholder => "Message", label: false %>
             </div>
   
             <!-- Form actions -->
-            <div class="form-group" style="padding-left: 10%; padding-right: 10%;">
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
                 <%= f.button :submit, 'Send message' %>
             </div>
               <br>
-            <div class="text-center">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> 
           </fieldset>
-
-
             </div>
           </form>
         </div>
   <% end %>
+  <br>
+    <div class="text-center">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> 
   </div>
 </div>
 
 
 
- <%
-=begin %>
+
 
             <!-- Name input-->
             <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
