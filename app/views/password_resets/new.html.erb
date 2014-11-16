@@ -5,6 +5,36 @@
 
 <div class="container">
   <div class="row">
+    <div class="well well-sm" style="width: 80%; margin-left: 10%; height: 100px; background-color: rgb(223, 223, 223);">
+      <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+         
+         <form accept-charset="UTF-8" action="/password_resets" method="post">
+
+          <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="/F7smTMzb15+OGOZJPJdLn+1kOONbQmy720GFlOixbU=">
+         </div>
+
+         <div class="field">
+            <input id="email" name="email" type="text" placeholder="Your Email" class="form-control" required="required" autofocus="autofocus" >
+         </div>
+
+           <div class="actions" style="padding-top: 14px;"><input class="btn btn-primary" name="commit" type="submit" value="Reset Password"> </div>
+
+        </form>   
+     </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+ <%
+=begin %>
+
+
+<div class="container">
+  <div class="row">
     <div class="well well-sm" style="width: 80%; margin-left: 10%; height: 93px; background-color: rgb(223, 223, 223);">
       <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
         <%= form_tag password_resets_path, :method => :post do %>
@@ -18,3 +48,6 @@
  </div>
 </div>
 
+
+<%
+=end %>
