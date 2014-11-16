@@ -1,22 +1,33 @@
-<h1  style="text-align: center;"> General</h1>
 
 <br>
 
-<ul class="nav nav-tabs" role="tablist" style="padding-left: 37%;">
-  <li class="active"><a href="/settings/general">General</a></li>
-  <li><a href="/settings/notifications">Notifications</a></li>
-  <li><a href="/contacts">Help</a></li>
+<div class="row" style="margin-right: 0px; margin-left: 0px;">
+<div class="span12 centered-pills" style="padding-top: 50px;">  
+<ul class="nav nav-pills" role="tablist">
+  <li class="active"><a href="/settings/general" style=" width: 150px; height: 33px; padding-top: 5px;">General</a></li>
+  <li><a href="/settings/notifications" style="background-color: rgb(166, 166, 166);color: white; margin-left: 30px; margin-right: 30px; width: 150px; height: 33px; padding-top: 5px;">
+  Notifications</a></li> 
+  <li><a href="/contacts" style="background-color: rgb(166, 166, 166);color: white; width: 150px; height: 33px; padding-top: 5px;">Help</a></li> 
 </ul>
+</div>
+</div>
 
-<br>
-<br>
-
-<h4 style="text-align: center;"> <%= current_user.first_name %> <%= current_user.last_name %> </h4>
-
-<h4 style="text-align: center;"> <%= current_user.email %> </h4>
-
+<div style="border:1px solid black; height: 300px; width: 70%; margin-top:20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-right:auto; margin-left:auto">
 <br>
 
-<p class="btn btn-primary btn-lg active" role="button" style="margin-left: 44%; background-color: #FFF;"> 
-	<%= link_to "Edit Account", edit_user_path(current_user) %> 
-</p>
+<h2 style="text-align: center;"> <%= current_user.first_name %> <%= current_user.last_name %> </h4>
+<br>
+<h4 style="text-align: center;"> Email - <%= current_user.email %> </h4>
+
+<br>
+<%= link_to edit_user_path(current_user) do %> 
+<h5 style="text-align: center; color: black;">Change Password</h5>
+<%end %>
+<br>
+<div>
+<%= link_to edit_user_path(current_user) do %> 
+<button type="button" class="btn btn-primary btn-md active" style="left: 0; right: 0; margin-left: auto; margin-right: auto; width: 200px; background-color: rgb(255, 206, 157); border: none; color: black;"> Edit Account Info </button>
+
+<%end %>
+</div>
+</div>

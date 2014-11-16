@@ -3,10 +3,18 @@
 <h1 style="text-align: center;">Reset Password</h1>
 
 
-<%= form_tag password_resets_path, :method => :post do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+<div class="container">
+  <div class="row">
+    <div class="well well-sm" style="width: 80%; margin-left: 10%; height: 93px; background-color: rgb(223, 223, 223);">
+      <div class="form-group" style="padding-left: 5%; padding-right: 5%;">
+        <%= form_tag password_resets_path, :method => :post do %>
+         <div class="field">
+	      <%= text_field_tag :email, params[:email], :placeholder => "Your Email" %>
+         </div>
+      <div class="actions" style="padding-top: 14px;"><%= submit_tag "Reset Password", :class=> "btn btn-primary" %> </div>
+    <% end %>
+   </div>
   </div>
-  <div class="actions"><%= submit_tag "Reset Password" %></div>
-<% end %>
+ </div>
+</div>
+
