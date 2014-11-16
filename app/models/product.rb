@@ -1,6 +1,15 @@
 class Product < ActiveRecord::Base
     before_validation :generate_slug
-
+    before_save :destroy_picture?
+    before_save :destroy_picture1?
+    before_save :destroy_picture2?
+    before_save :destroy_picture3?
+    before_save :destroy_picture4?
+    before_save :destroy_picture5?
+    before_save :destroy_picture6?
+    before_save :destroy_picture7?
+    before_save :destroy_picture8?
+    before_save :destroy_picture9?
 
 	validates :name, presence: true, uniqueness: true
 	validates :slug, uniqueness: true
@@ -55,6 +64,8 @@ class Product < ActiveRecord::Base
 
 
 
+
+
 	def tbd?
 		price.blank? || price.zero? 
 	end
@@ -76,3 +87,5 @@ class Product < ActiveRecord::Base
 	end
 
 end
+
+
