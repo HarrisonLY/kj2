@@ -946,9 +946,7 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  width: 100% \9;
-  max-width: 100%;
-  max-height: 200px;
+
 }
 
 
@@ -956,9 +954,6 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  width: 100% \9;
-  max-width: 100%;
-  max-height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -982,6 +977,11 @@ img {
 }
 .img-circle {
   border-radius: 50%;
+
+  height: 100%;
+
+  max-height: 170px;
+  width: 100%;
 }
 hr {
   margin-top: 20px;
@@ -4630,19 +4630,28 @@ a.list-group-item.active > .badge,
     font-size: 63px;
   }
 }
+
 .thumbnail {
   display: block;
   padding: ;
   margin-bottom: 10px;
   line-height: initial;
-  background-color: #fff;
-  border: ;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 3px darkgrey;
+  width: 170px;
+  height: 170px;
+  max-width: 100%;
+  max-height: 100%;
+
   -webkit-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
 }
+
+
 .thumbnail > img,
 .thumbnail a > img {
   margin-right: auto;
@@ -6388,5 +6397,9 @@ table.timecard
   .toggle {
     margin: 5px 5px 0 0;
   }
+
+
+
+
 
 /*# sourceMappingURL=bootstrap.css.map */
