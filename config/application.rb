@@ -22,7 +22,5 @@ module Kijovo
         console do
       ActiveRecord::Base.connection
     end
-
-    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
