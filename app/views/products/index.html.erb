@@ -32,11 +32,11 @@
           <div style="position: absolute; padding-left: 80%; padding-top: 10px;">
             <% if current_user %>
               <% if current_user.clocks.find_by(product_id: product.id) %>
-              <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete do %>
+              <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete, remote: true do %>
              <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
               <% end %> 
             <% else %>
-              <%= button_to product_clocks_path(product) do %>  
+              <%= button_to product_clocks_path(product), remote: true do %>  
             <i class="glyphicon glyphicon-time" style= "color:black;"> </i>
               <% end %> 
               <% end %>

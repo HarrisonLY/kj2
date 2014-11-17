@@ -45,6 +45,8 @@
        <div class="text-center" style="font-size: 18px; margin-top: 12px">Please submit your comments, questions, or concerns below.
        </div>
 
+<% if current_user %>
+
             <!-- Name input-->
             <div class="form-group" style="padding-left:10%; padding-right: 10%; margin-top: 12px">
               <input id="contact_name" name="contact[name]" type="text" placeholder="Your name" class="form-control" required="required" autofocus="autofocus" aria-required="true">
@@ -59,7 +61,26 @@
             <div class="form-group" style="padding-left:10%; padding-right: 10%;">
               <textarea aria-required="true" class="form-control" id="contact_message" name="contact[message]" placeholder="Please enter your message here..." rows="3.5" required="required"></textarea>
             </div>
+
+<% else %>
   
+
+            <!-- Name input-->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%; margin-top: 12px">
+              <input id="contact_name" name="contact[name]" type="text" placeholder="Your name" class="form-control" required="required" autofocus="autofocus" aria-required="true">
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
+              <input aria-required="true" id="contact_email" name="contact[email]" type="email"placeholder="Your email" class="form-control" required="required">
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group" style="padding-left:10%; padding-right: 10%;">
+              <textarea aria-required="true" class="form-control" id="contact_message" name="contact[message]" placeholder="Please enter your message here..." rows="3.5" required="required"></textarea>
+            </div>
+
+<% end %>
             <!-- Form actions -->
             <div class="form-group" style="padding-left:10%; padding-right: 10%;">
                 <input style="width: 100px;" class="btn btn-primary btn-sm" name="commit" type="submit" value="Send message">

@@ -9,9 +9,7 @@
             <th>ID</th>
             <th>Name</th>
 
-            <th>Age</th>
-            <th>Gender</th>    
-                    
+
             <th>Email</th>
             <th>TPC</th>
             <th>Sessions</th>
@@ -24,8 +22,6 @@
             <td> <%= link_to user.id, user %> </td>
             <td> <%= link_to user.first_name, user %> <%= link_to user.last_name, user %> </td>
 
-            <td> <%= Time.now.year - user.born_in %> </td>
-            <td> <%= user.gender %> </td>
 
             <td> <%= user.email %> </td>
             <td> <%= user.clocked_products.size %> </td>

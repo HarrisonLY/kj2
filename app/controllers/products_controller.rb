@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+
 def index
   @product = Product.find_by(params[:id]) 
   @categories = Category.all

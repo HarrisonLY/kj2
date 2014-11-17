@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 #  before_action :require_correct_user_admin, only: [:show]
   before_action :require_admin, only: [:index, :destroy]
 
+
 def index
   @users = User.all
 end
@@ -30,9 +31,6 @@ def create
     render :new
   end 
 end
-
-
-
 
 def edit
 end
