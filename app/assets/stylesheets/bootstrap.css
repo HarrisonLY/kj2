@@ -3750,7 +3750,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .centered-pills { text-align:center; }
 .centered-pills ul.nav-pills { display:inline-block; }
-.centered-pills li { display:inline; }
+.centered-pills li { display:inline; background-color: rgb(197, 197, 197);
+border-radius: 4px; }
 .centered-pills a { float:left; }
 * html .centered-pills ul.nav-pills { display:inline; } /* IE6 */
 *+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */

@@ -1,19 +1,22 @@
-<header style="background: #F0F0F0; position: fixed; width: 100%; z-index: 2; height: 60px; border-bottom: 1px solid rgb(224, 224, 224);">
+<header style="background: #F0F0F0; position: fixed; width: 100%; z-index: 2; height: 75px; border-bottom: 0px solid rgb(224, 224, 224);">
+
 
 <div class="row" style="margin-right: 0px; margin-left: 0px;">
 <div class="span12 centered-pills">  
-<nav style="padding-top: 10px;"> 
+<nav style="padding-top: 20px;"> 
 <ul class="nav nav-pills">
-  <li><%= link_to 'Trending', filtered_products_path(:trending) %></li>
-  <li><%= link_to 'Releasing Soon', filtered_products_path(:upcoming) %></li>
-  <li><%= link_to 'Just Released', filtered_products_path(:past) %></li>
-  <li><%= link_to 'TBA', filtered_products_path(:tba) %></li>
-  <li><%= link_to 'Newest', filtered_products_path(:newest) %></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:trending)) %>"> <a href="/products/filter/trending" style=" width: 150px; height: 33px; padding-top: 5px;">Trending</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:upcoming)) %>" style="margin-left: 30px; margin-right: 30px;"> <a href="/products/filter/upcoming"style=" width: 150px; height: 33px; padding-top: 5px;">Releasing Soon</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:past)) %>"> <a href="/products/filter/past"style=" width: 150px; height: 33px; padding-top: 5px;">Just Released</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:tba)) %>" style="margin-left: 30px; margin-right: 30px;"> <a href="/products/filter/tba"style=" width: 150px; height: 33px; padding-top: 5px;">TBA</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:newest)) %>"> <a href="/products/filter/newest"style=" width: 150px; height: 33px; padding-top: 5px;">Newest</a></li>
 </ul>
 </nav> 
 </div>
 </div>
 </header>
+
+
 
 
 
