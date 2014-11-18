@@ -2,7 +2,7 @@ module ProductsHelper
 
 def format_price(product)
   if product.tbd?
-  "TBD"
+  "$TBD"
   else
     number_to_currency(product.price)
   end

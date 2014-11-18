@@ -60,7 +60,7 @@ class Product < ActiveRecord::Base
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
     scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
 	scope :tba, -> { where(releasing_on: nil).order('random()') }
-	scope :newest, -> { last(20).reverse }
+	scope :newest, -> { last(100).reverse }
 
 
 

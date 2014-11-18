@@ -64,16 +64,15 @@
    <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px;">
     <div class="row" style="padding-top:90px; ">
     <% @products.each do |product| %>
-     <div class="col-md-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 8.5%;height: 170px;">
+     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 thumb" style="margin-bottom: 8.5%;height: 170px;">
 
 
 <%= link_to product do %>
      <div class="thumbnail" style="margin-bottom: 0px;">  
        <%= image_for(product) %>
         <div class="unit-caption"> 
-          <br>
-        <h2 style="font-size:20px"> <%= product.name %> </h2>
-         <p style="font-size:15px"> Price -- <%= format_price(product) %> </p>
+        <h2 style="font-size:20px; padding-top: 5px;"> <%= product.name.upcase %> </h2>
+         <p style="font-size:15px"> <%= format_price(product) %> </p>
         </div> 
          <div style="font-size: 17px; padding-top: 13px;  height: 45px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background-color: rgb(115, 145, 192);color: white; text-align: center">
              <%= format_releasing_on(product) %> - <span  style="color: black;"><%= format_releasing_on_remaining(product) %> </span> 
