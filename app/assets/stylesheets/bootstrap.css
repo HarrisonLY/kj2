@@ -3750,12 +3750,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .centered-pills { text-align:center; }
 .centered-pills ul.nav-pills { display:inline-block; }
-.centered-pills li { display:inline; background-color: rgb(197, 197, 197);
+.centered-pills li { display:inline; background-color: rgb(148, 148, 148);
 border-radius: 4px; }
 .centered-pills a { float:left; }
+.centered-pills li > a:hover { background-color: #C80000  ; }
 * html .centered-pills ul.nav-pills { display:inline; } /* IE6 */
 *+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */
-
 .nav-pills > li > a {
   border-radius: 4px;
 }
