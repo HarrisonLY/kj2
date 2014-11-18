@@ -125,7 +125,8 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit;
-
+border: none;
+background-color: transparent;
 }
 button {
   overflow: visible;
@@ -284,7 +285,7 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 0;
-
+font-size: 25px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -981,7 +982,7 @@ img {
           transition: all .2s ease-in-out;
 }
 .img-circle {
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 .img-respond,
@@ -3636,6 +3637,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+  font-size: 14px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -4656,13 +4658,17 @@ a.list-group-item.active > .badge,
   }
 }
 .thumbnail {
-  display: block;
-  padding: ;
-  margin-bottom: 10px;
-  line-height: initial;
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+  max-width: 170px;
+  max-height: 170px;
+  padding: px;
+  line-height: 1.42857143;
   background-color: #fff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 25%;
+  overflow: hidden;
+  box-shadow: 0 0 0 3px grey;
   -webkit-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
@@ -4674,6 +4680,7 @@ a.list-group-item.active > .badge,
 .thumbnail a > img {
   margin-right: auto;
   margin-left: auto;
+  max-height: 125px;
 }
 a.thumbnail:hover,
 a.thumbnail:focus,

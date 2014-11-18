@@ -3,13 +3,13 @@
 
 <div class="row" style="margin-right: 0px; margin-left: 0px;">
 <div class="span12 centered-pills">  
-<nav style="padding-top: 20px;"> 
+<nav style="padding-top: 25px;"> 
 <ul class="nav nav-pills">
-  <li class="<%= 'active' if current_page?(filtered_products_path(:trending)) %>"> <a href="/products/filter/trending" style=" width: 150px; height: 33px; padding-top: 5px; color: white;">Trending</a></li>
-  <li class="<%= 'active' if current_page?(filtered_products_path(:upcoming)) %>" style="margin-left: 30px; margin-right: 30px;"> <a href="/products/filter/upcoming"style=" width: 150px; height: 33px; padding-top: 5px;color: white;">Releasing Soon</a></li>
-  <li class="<%= 'active' if current_page?(filtered_products_path(:past)) %>"> <a href="/products/filter/past"style=" width: 150px; height: 33px; padding-top: 5px;color: white;">Just Released</a></li>
-  <li class="<%= 'active' if current_page?(filtered_products_path(:tba)) %>" style="margin-left: 30px; margin-right: 30px;"> <a href="/products/filter/tba"style=" width: 150px; height: 33px; padding-top: 5px;color: white;">TBA</a></li>
-  <li class="<%= 'active' if current_page?(filtered_products_path(:newest)) %>"> <a href="/products/filter/newest"style=" width: 150px; height: 33px; padding-top: 5px;color: white;">Newest</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:trending)) %>"> <a href="/products/filter/trending" style=" width: 150px; height: 33px; padding-top: 7px; color: white;">Trending</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:upcoming)) %>" style="margin-left: 30px; margin-right: 30px;"> <a href="/products/filter/upcoming"style=" width: 150px; height: 33px; padding-top: 7px;color: white;">Releasing Soon</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:past)) %>"> <a href="/products/filter/past"style=" width: 150px; height: 33px; padding-top: 7px;color: white;">Just Released</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:tba)) %>" style="margin-left: 30px; margin-right: 30px;"> <a href="/products/filter/tba"style=" width: 150px; height: 33px; padding-top: 7px;color: white;">TBA</a></li>
+  <li class="<%= 'active' if current_page?(filtered_products_path(:newest)) %>"> <a href="/products/filter/newest"style=" width: 150px; height: 33px; padding-top: 7px;color: white;">Newest</a></li>
 </ul>
 </nav> 
 </div>
@@ -17,7 +17,8 @@
 </header>
 
 
-
+ <%
+=begin %>
 
 
    <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px;">
@@ -55,3 +56,40 @@
     <% end %>
 
   </div>
+
+
+<%
+=end %>
+
+   <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px;">
+    <div class="row" style="padding-top:90px; ">
+    <% @products.each do |product| %>
+     <div class="col-md-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 8.5%;height: 170px;">
+
+
+<%= link_to product do %>
+     <div class="thumbnail" style="margin-bottom: 0px;">  
+
+       <%= image_for(product) %>
+
+
+         <div style="font-size: 17px; padding-left: 10%; padding-top: 13px;  height: 45px; text-align: left; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background-color: rgb(115, 145, 192);color: white;">
+             <%= format_releasing_on(product) %> - <span  style="color: black;"><%= format_releasing_on_remaining(product) %> </span> 
+        </div>
+     </div>
+   <% end %>
+            <div style="position: absolute; padding-left: 41.3%; padding-top: 10px;">
+            <% if current_user %>
+              <% if current_user.clocks.find_by(product_id: product.id) %>
+              <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete, remote: true do %>
+             <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
+              <% end %> 
+            <% else %>
+              <%= button_to product_clocks_path(product), remote: true do %>  
+            <i class="glyphicon glyphicon-time" style= "color:black;"> </i>
+              <% end %> 
+              <% end %>
+            <% end %>
+          </div> 
+  </div>
+<% end %>
