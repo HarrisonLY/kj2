@@ -1,4 +1,4 @@
-<header style="background: #F0F0F0; position: fixed; width: 100%; z-index: 2; height: 75px; border-bottom: 0px solid rgb(224, 224, 224);">
+<header style="background: #F0F0F0; position: fixed; width: 100%; z-index: 3; height: 75px; border-bottom: 0px solid rgb(224, 224, 224);">
 
 
 <div class="row" style="margin-right: 0px; margin-left: 0px;">
@@ -69,13 +69,15 @@
 
 <%= link_to product do %>
      <div class="thumbnail" style="margin-bottom: 0px;">  
-
        <%= image_for(product) %>
-
-
-         <div style="font-size: 17px; padding-left: 10%; padding-top: 13px;  height: 45px; text-align: left; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background-color: rgb(115, 145, 192);color: white;">
+        <div class="unit-caption"> 
+          <br>
+        <h2 style="font-size:20px"> <%= product.name %> </h2>
+         <p style="font-size:15px"> Price -- <%= format_price(product) %> </p>
+        </div> 
+         <div style="font-size: 17px; padding-top: 13px;  height: 45px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background-color: rgb(115, 145, 192);color: white; text-align: center">
              <%= format_releasing_on(product) %> - <span  style="color: black;"><%= format_releasing_on_remaining(product) %> </span> 
-        </div>
+</div>
      </div>
    <% end %>
             <div style="position: absolute; padding-left: 41.3%; padding-top: 10px;">
@@ -93,3 +95,5 @@
           </div> 
   </div>
 <% end %>
+
+
