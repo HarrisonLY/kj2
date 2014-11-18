@@ -4669,7 +4669,7 @@ a.list-group-item.active > .badge,
   background-color: #fff;
   border-radius: 25%;
   overflow: hidden;
-  box-shadow: 0 0 0 3px white;
+  box-shadow: 0 0 0 5px white;
   -webkit-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
@@ -4685,9 +4685,8 @@ a.list-group-item.active > .badge,
     padding:4%;
     text-align:center;
     color:#fff !important;
-
     z-index:2;
-  border-radius: 25%;
+    border-radius: 25%;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
