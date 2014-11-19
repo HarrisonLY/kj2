@@ -26,8 +26,8 @@
 <div class="row" style="margin-right: 0px; margin-left: 0px;">
 <div class="span12 centered-pills" style="padding-top: 50px;">  
 <ul class="nav nav-pills" role="tablist">
-  <li><a href="/settings/general" style="background-color: rgb(166, 166, 166);color: white; width: 150px; height: 33px; padding-top: 7px;">General</a></li>
-<li style="background-color: rgba(197, 197, 197, 0);"><a href="/settings/notifications" style="background-color: rgb(166, 166, 166);color: white; margin-left: 30px; margin-right: 30px; width: 150px; height: 33px; padding-top: 7px;">
+  <li><a href="/settings/general" style="background-color: rgb(148, 148, 148);color: white; width: 150px; height: 33px; padding-top: 7px;">General</a></li>
+<li style="background-color: rgba(197, 197, 197, 0);"><a href="/settings/notifications" style="background-color: rgb(148, 148, 148);color: white; margin-left: 30px; margin-right: 30px; width: 150px; height: 33px; padding-top: 7px;">
   Notifications</a></li> 
   <li class="active" style="width: 150px;"><a href="/contacts" style=" width: 150px; height: 33px; padding-top: 7px;">Help</a></li>
 </ul>
@@ -42,7 +42,7 @@
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
     <div style="border:1px solid rgb(190, 190, 190); height: 300px; width: 79%; margin-top:20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-right:auto; margin-left:auto">
      <fieldset>
-       <div class="text-center" style="font-size: 18px; margin-top: 12px">Please submit your comments, questions, or concerns below.
+       <div class="text-center" style="font-size: 18px; margin-top: 12px; color: lightgrey;">Please submit your comments, questions, or concerns below.
        </div>
 
 <% if current_user %>
@@ -91,7 +91,7 @@
     </div>
   <% end %>
   <br>
-    <div class="text-center">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> 
+    <div class="text-center" style="color: lightgrey;">You can also reach out to us by emailing <a href="mailto:info@kijovo.com">info@kijovo.com</a> 
   </div>
 </div>
 
