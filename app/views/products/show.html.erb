@@ -58,7 +58,15 @@
 
   <h4 style="font-size: 14px;">Share </h4>
 
+<div class="fb-share-button" data-href="#{request.original_url}" data-layout="button"></div>
 
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="medium" data-annotation="none"></div>
 
 
 </div>
@@ -212,9 +220,8 @@ h2{
 <% end %> 
 
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 
 <div id="fb-root"></div>
@@ -226,13 +233,6 @@ h2{
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-share-button" data-href="#{request.original_url}" data-layout="button"></div>
-
-<!-- Place this tag in your head or just before your close body tag. -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-<!-- Place this tag where you want the +1 button to render. -->
-<div class="g-plusone" data-size="medium" data-annotation="none"></div>
 
 
 </article>
