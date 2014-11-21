@@ -4681,7 +4681,7 @@ a.list-group-item.active > .badge,
   position: relative;
   line-height: 1.42857143;
   background-color: #fff;
-  border-radius: 10%;
+  border-radius: 50%;
 
   overflow: hidden;
   box-shadow: 0 0 0 5px white;
@@ -4701,7 +4701,7 @@ a.list-group-item.active > .badge,
     text-align:center;
     color:#fff !important;
     z-index:2;
-    border-radius: 10%;
+    border-radius: 50%;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
