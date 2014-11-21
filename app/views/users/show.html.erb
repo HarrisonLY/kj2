@@ -6,24 +6,24 @@
   </header>
 
 <% @clocked_products %>
-<h4 style="text-align: center;color: red;font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
+<h4 style="text-align: center;color: #428bca; font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
 
 
 
-<div class="row" style="
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 20px;
-">
-<div class="span12 centered-pills">  
-<nav> 
+<div class="row" style="margin-right: 0px; margin-left: 0px; margin-top: 20px;">
+<div class="span12 centered-pills">
+  <nav> 
 <ul class="nav nav-pills" role="tablist">
-  <li><%= link_to 'List View', user_path %></li>
-  <li><%= link_to 'Image View', users_image_path %></li>
+  <li class="active" style="margin-right: 15px;"><%= link_to 'List View', user_path, :class => "user-nav" %></li>
+  <li style="margin-left: 15px;"><%= link_to 'Image View', users_image_path, :class => "user-nav" %></li>
 </ul>
 </nav> 
+
+
 </div>
 </div>
+
+
 
 <table class="table-timecard" style="width: 60%; margin-top: 25px;" align="center">
   <thead>

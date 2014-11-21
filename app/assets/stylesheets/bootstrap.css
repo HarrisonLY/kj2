@@ -4697,7 +4697,10 @@ a.list-group-item.active > .badge,
     background:rgba(0, 0, 0, 0.7);
     width:100%;
     height:100%;
-    padding:4%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 8%;
+    padding-right: 8%;
     text-align:center;
     color:#fff !important;
     z-index:2;
@@ -6460,6 +6463,14 @@ table.timecard
     margin: 5px 5px 0 0;
   }
 
+
+
+.user-nav {
+color: white; 
+width: 150px; 
+height: 33px; 
+padding-top: 7px;
+}
 
 
 
