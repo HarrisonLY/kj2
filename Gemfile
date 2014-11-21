@@ -33,13 +33,14 @@ gem 'mailchimp-api', '~> 2.0.6'
 gem 'mail_form'
 gem 'simple_form'
 
+gem 'masonry-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
