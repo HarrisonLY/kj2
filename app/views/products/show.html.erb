@@ -57,37 +57,15 @@
 
 
   <h4 style="font-size: 14px;">Share </h4>
+
+
+
+
 </div>
   
   <h5 style="padding-top: 11px; margin-top: 22px; width: 200px; height: 38px; text-align: center; border-radius: 10px; background-color: rgb(81, 81, 81);margin-left: 20px;"> Price <%= format_price(@product) %> </h5>
 
   <h5 style="padding-top: 11px; margin-top: 22px; width: 200px; height: 38px; text-align: center; border-radius: 10px; background-color: rgb(81, 81, 81);margin-left: 20px;"> <%= link_to 'Website', @product.website %> </h5>
-
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=584095781694269&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div class="fb-share-button" data-href="#{request.original_url}" data-layout="button"></div>
-
-<!-- Place this tag in your head or just before your close body tag. -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-<!-- Place this tag where you want the +1 button to render. -->
-<div class="g-plusone" data-size="medium" data-annotation="none"></div>
-
-
-
 
 
 
@@ -104,7 +82,7 @@
 height: 215px !important;
 }
 .carousel{
-    margin-top: 20px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -135,41 +113,9 @@ h2{
 <body>
   <% if @product.picture? %> 
 <div class="bs-example">
-<div id="myCarousel" class="carousel slide" data-interval="100000" data-ride="carousel" style="width: 630px; position: absolute; top: 360px; margin-left: 250px; border-radius: 10px; height: 215px;">
+<div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel" style="width: 630px; position: absolute; top: 360px; margin-left: 250px; border-radius: 10px; height: 215px;">
       <!-- Carousel indicators -->
-        <ol class="carousel-indicators">
-          <% if @product.picture? %> 
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <% end %>
-          <% if @product.picture1? %> 
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-          <% end %>
-          <% if @product.picture2? %> 
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          <% end %>
-          <% if @product.picture3? %> 
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-          <% end %>
-          <% if @product.picture4? %> 
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-          <% end %>
-          <% if @product.picture5? %> 
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-          <% end %>
-          <% if @product.picture6? %> 
-            <li data-target="#myCarousel" data-slide-to="6"></li>
-          <% end %>
-          <% if @product.picture7? %> 
-            <li data-target="#myCarousel" data-slide-to="7"></li>
-          <% end %>
-          <% if @product.picture8? %> 
-            <li data-target="#myCarousel" data-slide-to="8"></li>
-          <% end %>
-          <% if @product.picture9? %> 
-            <li data-target="#myCarousel" data-slide-to="9"></li>
-          <% end %>
 
-        </ol>   
        <!-- Carousel items --> 
         <div class="carousel-inner">
           <% if @product.picture? %> 
@@ -234,10 +180,10 @@ h2{
         </div>
 
         <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="border-radius: 10px;">
             <span class="glyphicon glyphicon-chevron-left" style="padding-top: 15px;"></span>
         </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <a class="carousel-control right" href="#myCarousel" data-slide="next" style="border-radius: 10px;">
             <span class="glyphicon glyphicon-chevron-right" style="padding-top: 15px;"></span>
         </a>
     </div>
@@ -266,7 +212,27 @@ h2{
 <% end %> 
 
 
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=584095781694269&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="#{request.original_url}" data-layout="button"></div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="medium" data-annotation="none"></div>
 
 
 </article>
