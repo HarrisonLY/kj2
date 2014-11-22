@@ -8,12 +8,11 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-
-
             <th>Email</th>
             <th>TPC</th>
             <th>Sessions</th>
             <th>Last Login</th>
+            <th>Delete User</th>
         </tr>
     </thead>
     <tbody>
@@ -21,12 +20,11 @@
         <tr>
             <td> <%= link_to user.id, user %> </td>
             <td> <%= link_to user.first_name, user %> <%= link_to user.last_name, user %> </td>
-
-
             <td> <%= user.email %> </td>
             <td> <%= user.clocked_products.size %> </td>
             <td>Sessions</td>
             <td>Last Login</td>
+            <td><%= link_to 'Delete', user, :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %></td>
         </tr>
           <% end %>
 </table>
