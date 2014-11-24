@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	after_create :subscribe_to_mailchimp
 
 
+
     has_many :clocks, dependent: :destroy
     has_many :clocked_products, through: :clocks, source: :product
 
@@ -18,6 +19,12 @@ validates :password, length: { minimum: 3, allow_blank: true }
 validates :email, presence: true,                   
                   format: /\A\S+@\S+\z/,
                   uniqueness: { case_sensitive: false }
+
+
+  scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
+  scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
+  scope :tba, -> { where(releasing_on: nil).order('random()') }
+
 
 
 def self.authenticate(email, password)
@@ -43,10 +50,6 @@ def unsubscribe_from_mailchimp(notify = false)
        :send_notify => notify
     })
 end
-
-#    def subscribe_to_list
- #       Resque.enqueue(MailchimpSubscriber, self.id)
-#    end
 
 def send_password_reset
   generate_token(:password_reset_token)
@@ -96,13 +99,5 @@ end
   end
 
 
-#  def self.from_omniauth(auth)
-#    where(provider: auth.provider, uid: auth.uid).first_or_create.tap do |user|
-#      user.provider ||= auth.provider 
-#      user.uid = auth.uid
-#      user.name = auth.info.name
-#      user.save
-#    end
-#  end
 
 end

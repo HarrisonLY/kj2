@@ -17,6 +17,32 @@
 </div>
 </div>
 
+<% if @clocked_products.size < 1 %>
+
+<br>
+
+  <h1 style="text-align: center;"> What are you waiting for?! </h1> 
+  <a href="/products/filter/trending" style= "text-align: center; width: 100%"><h1 style="color: lightgreen; text-align: center;"> Go Clock Some Upcoming Products! </h1></a>
+
+<% else %>
+
+
+<div style="height: 22px; width: 330px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: 1px; ">
+ <p style="padding-top: 1px; color: white; text-align: center"> SORT VIA </p>
+ <div style="height: 22px; width: 330px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: -3px; ">
+  <p style="padding-left: 53px; padding-top: 1px; color: white"> <%= sortable "name", "Product Name" %> <span style="position: absolute; left: 180px;"> <%= sortable "releasing_on", "Release Date" %> </span style=""> </p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<br>
+<br>
+<br>
 
 
 
@@ -55,4 +81,4 @@
 <% end %>
 
 
-
+   <% end %>

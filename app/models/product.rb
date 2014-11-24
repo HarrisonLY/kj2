@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
     before_validation :generate_slug
 
-
+ 
 	validates :name, presence: true, uniqueness: true
 	validates :slug, uniqueness: true
 
