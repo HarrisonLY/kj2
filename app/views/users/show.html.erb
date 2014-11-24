@@ -15,7 +15,7 @@
 <div class="span12 centered-pills">
   <nav> 
 <ul class="nav nav-pills" role="tablist">
-  <li class="active" style="margin-right: 15px;"><%= link_to 'List View', user_path, :class => "user-nav" %></li>
+  <li class="active" style=""><%= link_to 'List View', user_path, :class => "user-nav" %></li>
   <li style="margin-left: 15px;"><%= link_to 'Image View', users_image_path, :class => "user-nav" %></li>
 </ul>
 </nav> 
@@ -29,17 +29,24 @@
 
 <% else %>
 
+ <%
+=begin %>
+
 <div style="height: 22px; width: 330px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: 1px; ">
  <p style="padd1ing-top: 1px; color: white"> SORT VIA </p>
  <div style="height: 22px; width: 330px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: -3px; ">
   <p style="padding-left: 53px; padding-top: 1px; color: white"> <%= sortable "name", "Product Name" %> <span style="position: absolute; left: 180px;"> <%= sortable "releasing_on", "Release Date" %> </span style=""> </p>
 </div>
 </div>
+
+<%
+=end %>
+
 </div>
 </div>
 
 <div class="container" style="padding-left: 75px;padding-right: 75px;">
-<table class="table-timecard" style="width: 50%; position: absolute; margin-top: 76px; border-collapse: separate;border-spacing: 0 .7em; left: 0;" align="center">
+<table class="table-timecard" style="width: 50%; position: absolute; margin-top: 30px; border-collapse: separate;border-spacing: 0 .7em; left: 0;" align="center">
 
   <thead >
       <caption> UPCOMING RELEASES & TBA</caption>
@@ -115,7 +122,7 @@
 
 
 
-<table class="table-timecard" style="position: absolute; right: 10px; top: 275px; width: 50%; margin-top: 25px; border-collapse: separate;
+<table class="table-timecard" style="position: absolute; right: 10px; top: 228px; width: 50%; margin-top: 25px; border-collapse: separate;
     border-spacing: 0 .7em;" align="center">
 
 

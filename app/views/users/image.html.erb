@@ -11,7 +11,7 @@
 <div style="margin-right: 0px; margin-left: 0px; margin-top: 20px;">
 <div class="span12 centered-pills">
 <ul class="nav nav-pills" role="tablist">
-  <li style="margin-right: 15px;"> <%= link_to 'List View', user_path, :class => "user-nav" %></li>
+  <li style=""> <%= link_to 'List View', user_path, :class => "user-nav" %></li>
   <li class="active" style="margin-left: 15px;"> <%= link_to 'Image View', users_image_path, :class => "user-nav" %></li>
 </ul>
 </div>
@@ -27,21 +27,7 @@
 <% else %>
 
 
-<div style="height: 22px; width: 330px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: 1px; ">
- <p style="padding-top: 1px; color: white; text-align: center"> SORT VIA </p>
- <div style="height: 22px; width: 330px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: -3px; ">
-  <p style="padding-left: 53px; padding-top: 1px; color: white"> <%= sortable "name", "Product Name" %> <span style="position: absolute; left: 180px;"> <%= sortable "releasing_on", "Release Date" %> </span style=""> </p>
-</div>
-</div>
-</div>
-</div>
 
-
-
-
-
-<br>
-<br>
 <br>
 
 

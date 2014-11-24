@@ -11,7 +11,7 @@ def format_price(product)
 
 def format_releasing_on(product)
   if product.tba?
-  "TBA"
+  "- TBA"
   else
       product.releasing_on
   end
