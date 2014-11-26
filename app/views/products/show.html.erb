@@ -21,7 +21,7 @@
     <div class="row">
        <div class="col-md-4 thumb" style="padding-bottom: 0px;margin-left: 20px;margin-top: 20px;">
 <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(167, 205, 249);color: black; text-align: center; position: absolute; z-index: 2; margin-top: 138px; width: 200px;">
-     <%= format_releasing_on(@product) %> - <span style="color: red;"> <%= format_releasing_on_remaining(@product) %> </span>  </div>
+     <%= format_releasing_on(@product) %> - <span style="color: red; font-weight: 500;"> <%= format_releasing_on_remaining(@product) %> </span>  </div>
         <div class="thumbnail" style="position: absolute; border-radius: 50%;width: 170px; box-shadow: 0 0 0 5px rgb(81, 81, 81); margin-top: 5px;margin-left: 15px;"> 
 
        <img class="img-responsive"> <%= image_for(@product) %>
@@ -62,7 +62,8 @@ $("showclock").html("<%= escape_javascript(render('products/clock')) %>")
   <h4 style="font-size: 14px; color: black">SHARE THIS PRODUCT!</h4>
 
 
-<div class="fb-share-button" data-href="#{request.original_url}" data-layout="button"></div>
+<div class="fb-share-button fb_iframe_widget" data-href="#{request.original_url}" data-layout="button" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=584095781694269&amp;href=http%3A%2F%2Flocalhost%3A3000%2Fproducts%2Ftest-1234%23%7Brequest.original_url%7D&amp;layout=button&amp;locale=en_US&amp;sdk=joey" style="
+"><span style="vertical-align: bottom; width: 56px; height: 26px;"><iframe name="f329ec82b4" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/share_button.php?app_id=584095781694269&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F7r8gQb8MIqE.js%3Fversion%3D41%23cb%3Dfe0415ee4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%253A3000%252Ff2c8838b0%26relation%3Dparent.parent&amp;href=http%3A%2F%2Flocalhost%3A3000%2Fproducts%2Ftest-1234%23%7Brequest.original_url%7D&amp;layout=button&amp;locale=en_US&amp;sdk=joey" style="border: none; visibility: visible; width: 56px; height: 20px;" mytubeid="mytube6" class=""></iframe></span></div>
 
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>

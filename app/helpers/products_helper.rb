@@ -36,6 +36,9 @@ def image_for(product)
   end
 end
 
+
+
+
 # images for product
 
 
