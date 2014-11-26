@@ -28,13 +28,27 @@
 
 
 
-<br>
+<div style="height: 22px; width: 315px; background-color: rgb(86, 86, 86); position: absolute;border-radius: 4px;margin-left: auto;margin-right: auto;left: 0;right: 0;margin-top: 1px; ">
+ <p style="padd1ing-top: 1px; color: white; text-align: center;"> SORT </p>
+</div>
 
+
+<div class="row" style="margin-right: 0px; margin-left: 0px;">
+<div class="span12 centered-pills">  
+<nav style="padding-top: 30px;"> 
+<ul class="nav nav-pills">
+  <li class="<%= 'active' if current_page?(users_image_path(:upcoming)) %>" style="margin-left: 6px; margin-right: 6px; background-color: rgb(86, 86, 86);"> <a href="/users/image/<%= @current_user.id %>/upcoming"style=" width: 100px; height: 45px; padding-top:3px;color: white;">Releasing Soon</a></li>
+  <li class="<%= 'active' if current_page?(users_image_path(:past)) %>" style="background-color: rgb(86, 86, 86);"> <a href="/users/image/<%= @current_user.id %>/past"style=" width: 100px; height: 45px; padding-top:3px;color: white;">Just Released</a></li>
+  <li class="<%= 'active' if current_page?(users_image_path(:tba)) %>" style="margin-left: 7px; margin-right: 6px; background-color: rgb(86, 86, 86);"> <a href="/users/image/<%= @current_user.id %>/tba"style=" width: 100px; height: 45px; padding-top:12.5px;color: white;">TBA</a></li>
+</ul>
+</nav> 
+</div>
+</div>
 
 
 <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px; border-left: 1px dashed white; border-right: 1px dashed white; border-radius: 20px;">
   <div class="row" style="padding-top: 30px; ">
-  <% @clocked_products.each do |product| %>
+  <% @clocked_products.each do |product| %> 
      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 thumb" style="margin-bottom: 8.5%; height: 170px;">
 
 

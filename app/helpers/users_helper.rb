@@ -9,6 +9,5 @@ module UsersHelper
     (product.releasing_on - (DateTime.now - 1.day)).to_i
   end
 end
-	
 
 end

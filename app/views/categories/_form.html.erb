@@ -1,15 +1,19 @@
+<div style="max-width: 250px; margin-left: auto; margin-right: auto;">
 <%= form_for(@category) do |f| %>
   <%= render "shared/errors", object: @category %>
-
-  <fieldset>
-    <ol>
-      <li class="required">
-          <%= f.label :name %><br/>
-          <%= f.text_field :name, autofocus: true %>
-      </li>
-    </ol>
+  <br>
+      <fieldset class="required">
+       <div class="form-group" class="required">
+          <label for="name" class="sr-only">category[name]</label>
+          <input autofocus="autofocus" id="category[name]" name="category[name]" type="text" class="form-control" placeholder="New Category Name" <%= f.text_field :name %>
+       </div>
     <p>
-      <%= f.submit %>
+      <% if @category.new_record? %> 
+    <input class="btn btn-custom btn-md btn-block" type="submit" value="Create Category" style="color: white;background-color: rgb(0, 202, 0);">
+      <% else %>
+    <input class="btn btn-custom btn-md btn-block" type="submit" value="Update Category" style="color: white;background-color: rgb(0, 202, 0);">
+    <% end %>
+    <br>
       <%= link_to "Cancel", categories_path %>
     </p>
   </fieldset>

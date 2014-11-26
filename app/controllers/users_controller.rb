@@ -57,6 +57,14 @@ def image
   @clocked_products = @user.clocked_products
 
 
+  case params[:scope] 
+  when 'past'
+    @clocked_products = Product.past
+  when 'tba'
+    @clocked_products = Product.tba
+  else 'upcoming'
+    @clocked_products = Product.upcoming
+  end
 
 end
 

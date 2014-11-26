@@ -9,7 +9,7 @@
 <% @categories.each do |category| %>
   <article class='category' style="padding-left: 100px;">
     <header>
-      <h3><%= link_to(category.name, category_path(category)) %></h3>
+     <li> <h3><%= link_to(category.name, category_path(category)) %></h3> </li>
     </header>
   </article>
 <% end %>
