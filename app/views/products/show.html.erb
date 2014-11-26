@@ -10,10 +10,10 @@
 
 
     <h1 style="text-align: center; font-size: 18px; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 10%; background-color: rgb(81, 81, 81);color: white;"> <%= @product.name %>  
-    <p>
+    <span style="position: absolute; right: 3%;">
      <% if current_user_admin? %> 
       <%= link_to "Edit", edit_product_path(@product) %> </h1> 
-    </p>
+    </span>
      <% end %>
   </header>
 
