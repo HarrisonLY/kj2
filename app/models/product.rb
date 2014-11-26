@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :slug, uniqueness: true
 
-	validates :description, length: {maximum: 800}
+	validates :description, length: {maximum: 500}
 
 
 
@@ -64,6 +64,8 @@ class Product < ActiveRecord::Base
 	def tba?
 		releasing_on.blank?
 	end
+
+
 
 	def out?
 		releasing_on < Time.now

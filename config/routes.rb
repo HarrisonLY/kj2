@@ -23,7 +23,7 @@ Kijovo::Application.routes.draw do
     end
 
 
-    get "users/image/:id/:scope" => "users#image", as: :users_products_image
+
      resources :users
      get 'users/image/:id' => 'users#image', as: :users_image
      get 'signup' => 'users#new'

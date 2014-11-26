@@ -1,13 +1,16 @@
 class ClocksController < ApplicationController
 	before_action :require_signin
-  before_action :set_product
-respond_to :html, :js
+    before_action :set_product
+    respond_to :html, :js
 
 def create
 
 	@product.clocks.create!(user: current_user)  
 
-redirect_to(:back)
+      respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+end
 end
 
 def destroy
@@ -15,9 +18,11 @@ def destroy
   clock = current_user.clocks.find(params[:id])
 
   clock.destroy
-  redirect_to(:back)
+      respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
 end
-
+end
 
 
 
@@ -28,3 +33,5 @@ private
   end
 
 end
+
+

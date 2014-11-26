@@ -23,9 +23,9 @@ def format_releasing_on(product)
     elsif product.out?
       "OUT"
     else
-     (product.releasing_on - DateTime.now).to_i
-  end
-end
+    (product.releasing_on - (DateTime.now - 1.day)).to_i
+  end 
+end  
 
 
 def image_for(product)

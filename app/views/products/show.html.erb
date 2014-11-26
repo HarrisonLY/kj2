@@ -7,13 +7,14 @@
 
 
   <header>
-  <% if current_user_admin? %>
-    <p style="text-align: center; width: 80%; margin-left: 10%;">
-      <%= link_to "Edit", edit_product_path(@product) %>
-    </p>
-  <% end %>
 
-    <h1 style="text-align: center; font-size: 18px; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 10%; background-color: rgb(81, 81, 81);color: white;"> <%= @product.name %> </h1> 
+
+    <h1 style="text-align: center; font-size: 18px; border-radius: 6px; height: 38px; width: 80%; padding-top: 9px; margin-left: 10%; background-color: rgb(81, 81, 81);color: white;"> <%= @product.name %>  
+    <p>
+     <% if current_user_admin? %> 
+      <%= link_to "Edit", edit_product_path(@product) %> </h1> 
+    </p>
+     <% end %>
   </header>
 
     <div class="container">
@@ -24,24 +25,26 @@
         <div class="thumbnail" style="position: absolute; border-radius: 50%;width: 170px; box-shadow: 0 0 0 5px rgb(81, 81, 81); margin-top: 5px;margin-left: 15px;"> 
 
        <img class="img-responsive"> <%= image_for(@product) %>
+</div> 
 
 
-          </div> 
-  <div style="position: absolute; padding-left:85px; padding-top: 196px; z-index: 3;"> 
+<div id="showclock" style="position: absolute; padding-left:85px; padding-top: 196px; z-index: 3;"> 
     <% if current_user %>
     <% if @current_clock %> 
-      <%= button_to product_clock_path(@product, @current_clock), method: :delete do%>
-       <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
-        <% end %> 
+<%= render 'products/unclock' %>
     <% else %>
-      <%= button_to product_clocks_path(@product) do %>
-      <i class="glyphicon glyphicon-time" style= "color:white;"> </i>
-    <% end %> 
+<%= render 'products/clock' %>
     <% end %> 
         <% end %> 
         </div>
     </div>
   </div>
+
+<script>
+$("showclock").html("<%= escape_javascript(render('products/unclock')) %>")
+$("showclock").html("<%= escape_javascript(render('products/clock')) %>")
+</script>
+
 
 
 
@@ -120,7 +123,7 @@ h2{
 <body style="padding-bottom: 5px">
   <% if @product.picture? %> 
 <div class="bs-example">
-<div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel" style="width: 630px; position: absolute; top: 360px; margin-left: 250px; border-radius: 10px; height: 215px;">
+<div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel" style="width: 630px; position: absolute; top: 350px; margin-left: 250px; border-radius: 10px; height: 215px;">
       <!-- Carousel indicators -->
 
        <!-- Carousel items --> 
@@ -204,7 +207,7 @@ h2{
 <% else %> 
 
 <div class="bs-example">
-<div id="myCarousel" class="carousel slide" data-interval="100000" data-ride="carousel" style="width: 630px; position: absolute; top: 360px; margin-left: 250px; border-radius: 10px; height: 215px;">
+<div id="myCarousel" class="carousel slide" data-interval="100000" data-ride="carousel" style="width: 630px; position: absolute; top: 350px; margin-left: 250px; border-radius: 10px; height: 215px;">
       <div class="carousel-inner" style="border-radius: 10px;height: 215px;">
             <div class="active item" style="border-radius: 10px">
                 <h2 style="padding-top: 50px; margin-left: 80px; margin-right: 80px;">More Images Coming Soon</h2>
