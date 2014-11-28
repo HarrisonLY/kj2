@@ -23,11 +23,12 @@ Kijovo::Application.routes.draw do
     end
 
 
+
+     get "users/image/:id/before" => "users#image", scope: "before"
+     get "users/image/:id/future" => "users#image", scope: "future"
+     get "users/image/:id/unknown" => "users#image", scope: "unknown"
      resources :users
      get 'users/image/:id' => 'users#image', as: :users_image
-     get "users/image/:id/past" => "users#image", scope: "past"
-     get "users/image/:id/upcoming" => "users#image", scope: "upcoming"
-     get "users/image/:id/tba" => "users#image", scope: "tba"
      get 'signup' => 'users#new'
      post 'users_create' => 'users# create'
      get 'users/tutorial/:id' => 'users#tutorial', as: :users_tutorial

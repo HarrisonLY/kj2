@@ -21,18 +21,13 @@ validates :email, presence: true,
                   uniqueness: { case_sensitive: false }
 
 
-  scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
-  scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
-  scope :tba, -> { where(releasing_on: nil).order('random()') }
-
-
-
-
 
 def self.authenticate(email, password)
   user = User.find_by(email: email)
   user && user.authenticate(password)
 end
+
+
 
 
 def subscribe_to_mailchimp(optin = false)

@@ -53,17 +53,18 @@ end
 
 
 def image
-  @filtered_users = User.find(params[:id])
+  @user = User.find(params[:id])
   @clocked_products = @user.clocked_products
 
 
+
   case params[:scope] 
-  when 'past'
-    @clocked_products = Product.past
-  when 'tba'
-    @clocked_products = Product.tba
-  else 'upcoming'
-    @clocked_products = Product.upcoming
+  when 'before'
+    @clocked_products = Product.before
+  when 'unknown'
+    @clocked_products = Product.unknown
+  else 'future'
+    @clocked_products = Product.future
   end
 
 end

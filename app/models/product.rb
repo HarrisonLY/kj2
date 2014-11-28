@@ -45,7 +45,7 @@ class Product < ActiveRecord::Base
     has_many :categorizations, dependent: :destroy
     has_many :categories, through: :categorizations
 
-#    has_many :pictures, dependent: :destroy
+#   has_many :pictures, dependent: :destroy
 
     scope :trending, -> { joins(:clocks).group("#{Product.table_name}.id").where("releasing_on >= ?", Time.now).order("count(clocks.product_id) desc").order("name") }
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
@@ -53,7 +53,9 @@ class Product < ActiveRecord::Base
 	scope :tba, -> { where(releasing_on: nil).order('random()') }
 	scope :newest, -> { last(100).reverse }
 
-
+    scope :future, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
+    scope :before, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
+    scope :unknown, -> { where(releasing_on: nil).order('random()') }
 
 
 
