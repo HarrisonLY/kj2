@@ -8,7 +8,6 @@ def index
   @product = Product.find_by(params[:id]) 
   @categories = Category.all
 
-
   case params[:scope] 
   when 'past'
     @products = Product.past
@@ -21,8 +20,8 @@ def index
   else
     @products = Product.trending
   end
-
 end
+
 
 def show
   @clockers = @product.clockers

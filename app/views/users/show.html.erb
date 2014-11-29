@@ -1,10 +1,12 @@
 <%= content_for(:title, @user.first_name) %>
 
+
+
+
 <article id="user">
   <header>
      <h1 style="text-align: center;"> My Timecard </h1>
   </header>
-
 
 <% @clocked_products %>
 <h4 style="text-align: center;color: #428bca; font-size: 15px;">Products I've Clocked ( <%= @clocked_products.size %> ) </h4>
@@ -16,7 +18,7 @@
   <nav> 
 <ul class="nav nav-pills" role="tablist">
   <li class="active" style=""><%= link_to 'List View', user_path, :class => "user-nav" %></li>
-  <li style="margin-left: 15px;"><%= link_to 'Image View', users_image_path, :class => "user-nav" %></li>
+  <li style="margin-left: 7px;"><%= link_to 'Image View', users_image_future_path, :class => "user-nav" %></li>
 </ul>
 </nav> 
 

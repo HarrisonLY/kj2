@@ -3769,7 +3769,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .centered-pills li { display:inline; background-color: rgb(148, 148, 148);
 border-radius: 4px; }
 .centered-pills a { float:left; }
-.centered-pills li > a:hover { background-color: #C80000  ; }
+.centered-pills li > a:hover { background-color: #C80000; color: white;  ; }
 * html .centered-pills ul.nav-pills { display:inline; } /* IE6 */
 *+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */
 .nav-pills > li > a {
@@ -6467,7 +6467,7 @@ table.timecard
 
 .user-nav {
 color: white; 
-width: 150px; 
+width: 153.5px; 
 height: 33px; 
 padding-top: 7px;
 }
