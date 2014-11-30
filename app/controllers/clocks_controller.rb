@@ -32,6 +32,11 @@ private
     @product = Product.find_by!(slug: params[:product_id])
   end
 
+def released
+  user = User.find_by_email(params[:email])
+  user.send.clock_release if user.clocked.product.out?
+end
+
 end
 
 

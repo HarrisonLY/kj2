@@ -37,7 +37,7 @@ gem 'mailchimp-api', '~> 2.0.6'
 
 gem 'mail_form'
 gem 'simple_form'
-gem 'metamagic'
+
 
 gem 'masonry-rails'
 
