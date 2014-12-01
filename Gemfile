@@ -50,6 +50,7 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'mandrill-api'
 
+
 gem 'masonry-rails'
 
 gem 'browser-timezone-rails'

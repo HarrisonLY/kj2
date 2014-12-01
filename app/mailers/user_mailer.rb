@@ -2,15 +2,17 @@ class UserMailer < ActionMailer::Base
   default from: "info@kijovo.com"
 
 ActionMailer::Base.smtp_settings = {
-    :port =>           '587',
     :address =>        'smtp.mandrillapp.com',
-    :user_name =>      'harrison@kijovo.com',
-    :password =>       'dDXGDfnTBNJ5hkCAbeOyqA',
-    :domain =>         'kijovodemo.herokuapp.com',
-    :authentication => :plain
-}
+    :port =>           '587',
+    :user_name =>      ENV['harrison@kijovo.com'],
+    :password =>       ENV['dDXGDfnTBNJ5hkCAbeOyqA'],
+    :domain =>         'heroku.com'
+  }
 ActionMailer::Base.delivery_method = :smtp
 
+MandrillMailer.configure do |config|
+  config.api_key = ENV['dDXGDfnTBNJ5hkCAbeOyqA']
+end
 
 
   # Subject can be set in your I18n file at config/locales/en.yml

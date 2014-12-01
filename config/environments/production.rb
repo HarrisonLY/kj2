@@ -10,7 +10,9 @@ Kijovo::Application.configure do
     :domain =>         'kijovodemo.herokuapp.com', # your domain to identify your server when connecting
   }
 
-
+MandrillMailer.configure do |config|
+  config.api_key = ENV['dDXGDfnTBNJ5hkCAbeOyqA']
+end
 
 
   # Code is not reloaded between requests.
