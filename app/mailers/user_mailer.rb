@@ -4,8 +4,8 @@ class UserMailer < ActionMailer::Base
 ActionMailer::Base.smtp_settings = {
     :port =>           '587',
     :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['harrison@kijovo.com'],
-    :password =>       ENV['dDXGDfnTBNJ5hkCAbeOyqA'],
+    :user_name =>      'harrison@kijovo.com',
+    :password =>       'dDXGDfnTBNJ5hkCAbeOyqA',
     :domain =>         'kijovodemo.herokuapp.com',
     :authentication => :plain
 }
