@@ -33,8 +33,8 @@
         <%= f.number_field :price %>
       </li>
       <li class>
-          <%= f.label :description, "Overview (500 character maximum)" %><br/>
-          <%= f.text_area :description, cols: 60, rows: 8 %>
+          <%= f.label :description, "Overview" %> <span class="countdown"></span><br/>
+          <%= f.text_area :description, cols: 60, rows: 8, :class => "message" %>
       </li>
       <li class=>
           <%= f.label :website, "Website" %><br/>
@@ -122,3 +122,20 @@
     </p>
 <% end %>
 </form>
+
+
+<script>
+
+function updateCountdown() {
+    // 500 is the max message length
+    var remaining = 500 - jQuery('.message').val().length;
+    jQuery('.countdown').text(remaining + ' characters remaining.');
+}
+
+jQuery(document).ready(function($) {
+    updateCountdown();
+    $('.message').change(updateCountdown);
+    $('.message').keyup(updateCountdown);
+});
+
+</script>
