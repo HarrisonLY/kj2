@@ -1,5 +1,15 @@
 class Contact < MailForm::Base
-  #include MailForm::Delivery
+
+ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'kijovodemo.herokuapp.com',
+    :authentication => :plain
+}
+ActionMailer::Base.delivery_method = :smtp
+
 
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
