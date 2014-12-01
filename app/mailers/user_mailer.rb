@@ -2,12 +2,13 @@ class UserMailer < ActionMailer::Base
   default from: "info@kijovo.com"
 
 ActionMailer::Base.smtp_settings = {
-    :address =>        'smtp.mandrillapp.com',
     :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
     :user_name =>      ENV['harrison@kijovo.com'],
     :password =>       ENV['dDXGDfnTBNJ5hkCAbeOyqA'],
-    :domain =>         'heroku.com'
-  }
+    :domain =>         'kijovodemo.herokuapp.com',
+    :authentication => :plain
+}
 ActionMailer::Base.delivery_method = :smtp
 
 
