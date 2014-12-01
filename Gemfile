@@ -48,7 +48,7 @@ gem 'mailchimp-api', '~> 2.0.6'
 
 gem 'mail_form'
 gem 'simple_form'
-
+gem 'mandrill-api'
 
 gem 'masonry-rails'
 

@@ -152,6 +152,9 @@ GEM
     mailchimp-api (2.0.6)
       excon (>= 0.16.0)
       json (>= 1.7.7)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     masonry-rails (0.2.4)
       railties
     mime-types (2.4.3)
@@ -292,6 +295,7 @@ DEPENDENCIES
   kaminari
   mail_form
   mailchimp-api (~> 2.0.6)
+  mandrill-api
   masonry-rails
   mini_magick (= 3.8.0)
   omniauth-facebook
