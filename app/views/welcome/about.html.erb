@@ -35,15 +35,13 @@
 
 
 
-<span class="ig-follow" data-id="3006c41995" data-count="false" data-size="medium" data-username="true" style="
-    margin-top: -12px;
-"><div title="Follow @kijovo on Instagram" class="IGF medium" data-userid="1212980816" data-user="kijovo"><div class="ig-background"><img class="ig-camera" src="http://instagramfollowbutton.com/components/instagram/v2/img/ig-camera.png" height="16" width="16"><span class="ig-text">Follow @kijovo</span></div></div></span>
-
-<script>(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="http://instagramfollowbutton.com/components/instagram/v2/js/ig-follow.js";s.parentNode.insertBefore(g,s);}(document,"script"));</script>
 
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+twttr.widgets.load();
+
+</script>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -52,7 +50,15 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=584095781694269&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+     window.fbAsyncInit = function(){  // this gets triggered when FB object gets initialized
+            console.log("FB Object initiated");
+            FB.XFBML.parse(); // now we can safely call parse method
+       };
+
+
+</script>
 
 
 </div>
