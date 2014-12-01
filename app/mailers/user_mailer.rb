@@ -10,10 +10,6 @@ ActionMailer::Base.smtp_settings = {
   }
 ActionMailer::Base.delivery_method = :smtp
 
-MandrillMailer.configure do |config|
-  config.api_key = ENV['dDXGDfnTBNJ5hkCAbeOyqA']
-end
-
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

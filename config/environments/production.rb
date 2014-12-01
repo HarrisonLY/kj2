@@ -7,12 +7,8 @@ Kijovo::Application.configure do
     :user_name =>      'harrison@kijovo.com',
     :password =>       'dDXGDfnTBNJ5hkCAbeOyqA', # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-    :domain =>         'kijovodemo.herokuapp.com', # your domain to identify your server when connecting
+    :domain =>         'heroku.com', # your domain to identify your server when connecting
   }
-
-MandrillMailer.configure do |config|
-  config.api_key = ENV['dDXGDfnTBNJ5hkCAbeOyqA']
-end
 
 
   # Code is not reloaded between requests.
