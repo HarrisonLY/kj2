@@ -46,10 +46,7 @@
     </div>
   </div>
 
-<script>
-$("showclock").html("<%= escape_javascript(render('products/unclock')) %>")
-$("showclock").html("<%= escape_javascript(render('products/clock')) %>")
-</script>
+
 
 
 
@@ -84,8 +81,9 @@ $("showclock").html("<%= escape_javascript(render('products/clock')) %>")
   
   <h5 style="padding-top: 11px; margin-top: 22px; width: 200px; height: 38px; text-align: center; border-radius: 10px; background-color: rgb(81, 81, 81);margin-left: 20px;"> Price <%= format_price(@product) %> </h5>
 
-  <h5 style="padding-top: 11px; margin-top: 22px; width: 200px; height: 38px; text-align: center; border-radius: 10px; background-color: rgb(81, 81, 81);margin-left: 20px;"> <%= link_to 'Website', @product.website, :target => "_blank" %> </h5>
-
+  
+ <h5 onclick="window.open('<%= @product.website %>','mywindow');" style="padding-top: 11px; margin-top: 22px; width: 200px; height: 38px; text-align: center; border-radius: 10px; background-color: rgb(81, 81, 81);margin-left: 20px; cursor: pointer; color: #428bca;" >
+ Website </h5>
 
 
 <html lang="en">
