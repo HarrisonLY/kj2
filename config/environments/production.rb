@@ -1,6 +1,18 @@
 Kijovo::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+ config.action_mailer.smtp_settings = {
+    :address =>        'smtp.mandrillapp.com',
+    :port =>           '587',
+    :user_name =>      'harrison@kijovo.com',
+    :password =>       'dDXGDfnTBNJ5hkCAbeOyqA', # SMTP password is any valid API key
+    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
+    :domain =>         'kijovodemo.herokuapp.com', # your domain to identify your server when connecting
+  }
+
+
+
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
