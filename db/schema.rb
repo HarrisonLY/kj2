@@ -101,7 +101,25 @@ ActiveRecord::Schema.define(version: 20141129030833) do
     t.datetime "picture9_updated_at"
   end
 
-# Could not dump table "users" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "admin",                  default: false
+    t.string   "born_in"
+    t.string   "gender"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "timezone"
+    t.integer  "sign_in_count"
+  end
 
 end
