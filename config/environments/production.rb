@@ -1,6 +1,16 @@
 Kijovo::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      'harrison@kijovo.com',
+    :password =>       'dDXGDfnTBNJ5hkCAbeOyqA',
+    :domain =>         'kijovodemo.herokuapp.com',
+    :authentication => :plain
+}
+ActionMailer::Base.delivery_method = :smtp
+
 
   # Code is not reloaded between requests.
   config.cache_classes = true
