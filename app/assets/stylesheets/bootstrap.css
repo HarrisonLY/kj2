@@ -2390,6 +2390,7 @@ input[type="checkbox"] {
 }
 input[type="file"] {
   display: block;
+  color: green;
 }
 input[type="range"] {
   display: block;
@@ -6483,7 +6484,10 @@ padding-top: 7px;
 .clearfix { zoom: 1; }
 
 
-
+.description {
+    padding-right: 7px;
+    padding-left: 7px;
+}
 
 
 
