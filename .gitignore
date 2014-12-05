@@ -14,11 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+public/assets/** 
 
 # Ignore all config files
 config/amazon_s3.yml 
 config/database.yml 
 config/secrets.yml 
- 
-
- public/assets/**
