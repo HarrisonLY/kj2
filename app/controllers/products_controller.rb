@@ -7,18 +7,22 @@ class ProductsController < ApplicationController
 def index
   @product = Product.find_by(params[:id]) 
   @categories = Category.all
-
   case params[:scope] 
   when 'past'
-    @products = Product.past
+    @products = Product.past.page(params[:page]).per_page(24)
   when 'upcoming'
-    @products = Product.upcoming
+    @products = Product.upcoming.page(params[:page]).per_page(24)
   when 'tba'
-    @products = Product.tba
+    @products = Product.tba.page(params[:page]).per_page(24)
   when 'newest'
-    @products = Product.newest
+    @products = Product.newest.page(params[:page]).per_page(24)
   else
-    @products = Product.trending
+    @products = Product.trending.page(params[:page]).per_page(24)
+  end
+
+  respond_to do |format|
+    format.html
+    format.js
   end
 end
 

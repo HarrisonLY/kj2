@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :slug, uniqueness: true
 
-	validates :description, length: {maximum: 400}
+	validates :description, length: {maximum: 500}
 
 
 
@@ -51,7 +51,7 @@ class Product < ActiveRecord::Base
     scope :upcoming, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
     scope :past, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }
 	scope :tba, -> { where(releasing_on: nil).order('random()') }
-	scope :newest, -> { last(100).reverse }
+	scope :newest, -> { all.order("id desc") }
 
     scope :future, -> { where("releasing_on >= ?", Time.now).order("releasing_on").order(:name) }
     scope :before, -> { where("releasing_on <= ?", Time.now).order("releasing_on desc").order(:name) }

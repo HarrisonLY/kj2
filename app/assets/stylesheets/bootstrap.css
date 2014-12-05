@@ -6481,6 +6481,14 @@ padding-top: 7px;
     text-align: center;
 }
 
+.message {
+     background-color: rgb(81, 81, 81); 
+     height: 135px; 
+     width: 630px;
+     color: white;
+     border-radius: 10px;
+}
+
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
