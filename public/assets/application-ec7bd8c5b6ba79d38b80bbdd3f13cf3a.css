@@ -1183,6 +1183,8 @@ h6,
 p {
   margin: 0 0 10px;
   color: lightgrey;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 .lead {
   margin-bottom: 20px;
@@ -2412,6 +2414,7 @@ input[type="checkbox"] {
 }
 input[type="file"] {
   display: block;
+  color: green;
 }
 input[type="range"] {
   display: block;
@@ -6500,12 +6503,17 @@ padding-top: 7px;
     text-align: center;
 }
 
+.message {
+     background-color: rgb(81, 81, 81); 
+     height: 135px; 
+     width: 630px;
+     color: white;
+     border-radius: 10px;
+}
+
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
-
-
-
 
 
 
