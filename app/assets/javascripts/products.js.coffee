@@ -13,5 +13,4 @@ $(window).scroll ->
         window.pagination_loading = true
 
         # Load as before but attach a callback to clear the flag when we're done.
-        $('.pagination').text('Fetching more products...')
         $.getScript(url).always -> window.pagination_loading = false
