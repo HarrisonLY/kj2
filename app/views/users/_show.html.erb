@@ -30,6 +30,12 @@
               <% end %>
             <% end %>
           </div> 
+
+<div class="fb-share-button fb_iframe_widget" data-href="#{request.original_url}" data-layout="button" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=584095781694269&amp;href=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F1%2Ffuture%23%7Brequest.original_url%7D&amp;layout=button&amp;locale=en_US&amp;sdk=joey" style="vertical-align: super; height: 26px;right: 80px; position: absolute; top: 8px;"><span style="vertical-align: bottom; width: 56px; height: 20px;"><iframe name="f1b71182f8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/share_button.php?app_id=584095781694269&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F7r8gQb8MIqE.js%3Fversion%3D41%23cb%3Df2ddaf86e%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%253A3000%252Ff16b81c0dc%26relation%3Dparent.parent&amp;href=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F1%2Ffuture%23%7Brequest.original_url%7D&amp;layout=button&amp;locale=en_US&amp;sdk=joey" style="border: none; visibility: visible; width: 56px; height: 20px;" class=""></iframe></span></div>
+
+
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.ff7d9077a26377d36b6a53b1a95be617.en.html#_=1417884419621&amp;count=none&amp;hashtags=kijovokicks&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F1%2Ffuture&amp;size=m&amp;text=Kijovo%20-%20Harrison&amp;url=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F1%2Ffuture&amp;via=kijovo" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-none" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 57px; height: 20px;right: 2px; position: absolute; top: 10px;"></iframe>
+
   </div>
 <% end %>
 
@@ -37,3 +43,25 @@
 
 
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+twttr.widgets.load();
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=584095781694269&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+     window.fbAsyncInit = function(){  // this gets triggered when FB object gets initialized
+            console.log("FB Object initiated");
+            FB.XFBML.parse(); // now we can safely call parse method
+       };
+
+</script>

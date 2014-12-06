@@ -1,4 +1,4 @@
-$('#clocked_products').append('<%= j render "image" %>');
+$('#image_clocked_products').append('<%= j render "image" %>');
 <% if @clocked_products.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@clocked_products) %>');
 <% else %>

@@ -23,6 +23,10 @@ def show
   else 'future'
     @clocked_products = Product.future.page(params[:page]).per_page(15)
   end
+    respond_to do |format|
+    format.html
+    format.js
+  end
 end
 
 def new
@@ -69,13 +73,16 @@ def image
 
   case params[:scope] 
   when 'before'
-    @clocked_products = Product.before.page(params[:page]).per_page(24)
+    @clocked_products = Product.before.page(params[:page]).per_page(12)
   when 'unknown'
-    @clocked_products = Product.unknown.page(params[:page]).per_page(24)
+    @clocked_products = Product.unknown.page(params[:page]).per_page(12)
   else 'future'
-    @clocked_products = Product.future.page(params[:page]).per_page(24)
+    @clocked_products = Product.future.page(params[:page]).per_page(12)
   end
-
+  respond_to do |format|
+    format.html
+    format.js
+  end
 end
 
 
