@@ -17,7 +17,7 @@
 <div class="span12 centered-pills">
   <nav> 
 <ul class="nav nav-pills" role="tablist">
-  <li class="active" style=""><%= link_to 'List View', users_show_future_path, :class => "user-nav" %></li>
+  <li class="active" style=""><%= link_to 'List View', filtered_users_path(:scope => "future"), :class => "user-nav" %></li>
   <li style="margin-left: 7px;"><%= link_to 'Image View', users_image_future_path, :class => "user-nav" %></li>
 </ul>
 </nav> 
@@ -40,15 +40,15 @@
 <div class="span12 centered-pills">  
 <nav style="padding-top: 30px;"> 
 <ul class="nav nav-pills">
-  <li class="<%= 'active' if current_page?(users_show_future_path) %>" style="margin-left: 6px; margin-right: 6px; background-color: rgb(86, 86, 86);"> <a href="/users/<%= @current_user.id %>/future"style=" width: 100px; height: 45px; padding-top:3px;color: white;">Releasing Soon</a></li>
-  <li class="<%= 'active' if current_page?(users_show_before_path) %>" style="background-color: rgb(86, 86, 86);"> <a href="/users/<%= @current_user.id %>/before"style=" width: 100px; height: 45px; padding-top:3px;color: white;">Just Released</a></li>
-  <li class="<%= 'active' if current_page?(users_show_unknown_path) %>" style="margin-left: 7px; margin-right: 6px; background-color: rgb(86, 86, 86);"> <a href="/users/<%= @current_user.id %>/unknown"style=" width: 100px; height: 45px; padding-top:12.5px;color: white;">TBA</a></li>
+  <li class="<%= 'active' if current_page?(filtered_users_path(:scope => "future")) %>" style="margin-left: 6px; margin-right: 6px; background-color: rgb(86, 86, 86);"> <a href="/users/<%= @current_user.id %>/future"style=" width: 100px; height: 45px; padding-top:3px;color: white;">Releasing Soon</a></li>
+  <li class="<%= 'active' if current_page?(filtered_users_path(:scope => "before")) %>" style="background-color: rgb(86, 86, 86);"> <a href="/users/<%= @current_user.id %>/before"style=" width: 100px; height: 45px; padding-top:3px;color: white;">Just Released</a></li>
+  <li class="<%= 'active' if current_page?(filtered_users_path(:scope => "unknown")) %>" style="margin-left: 7px; margin-right: 6px; background-color: rgb(86, 86, 86);"> <a href="/users/<%= @current_user.id %>/unknown"style=" width: 100px; height: 45px; padding-top:12.5px;color: white;">TBA</a></li>
 </ul>
 </nav> 
 </div>
 </div>
 
-<% end %> 
+
 
 
 <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px; border-left: 1px dashed white; border-right: 1px dashed white; border-radius: 20px;">
@@ -60,3 +60,4 @@
 
    <%= will_paginate @clocked_products %>
 
+   <% end %>

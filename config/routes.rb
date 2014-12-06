@@ -23,15 +23,12 @@ Kijovo::Application.routes.draw do
     end
 
 
-
+     get "users/:id/:scope" => "users#show", as: :filtered_users
      resources :users
      get 'users/image/:id' => 'users#image', as: :users_image
      get "users/image/:id/before" => "users#image", scope: "before", as: :users_image_before
      get "users/image/:id/future" => "users#image", scope: "future", as: :users_image_future
      get "users/image/:id/unknown" => "users#image", scope: "unknown", as: :users_image_unknown
-     get "users/:id/before" => "users#show", scope: "before", as: :users_show_before
-     get "users/:id/future" => "users#show", scope: "future", as: :users_show_future
-     get "users/:id/unknown" => "users#show", scope: "unknown", as: :users_show_unknown
      get 'signup' => 'users#new'
      post 'users_create' => 'users# create'
      get 'users/tutorial/:id' => 'users#tutorial', as: :users_tutorial
