@@ -60,11 +60,11 @@ def image
 
   case params[:scope] 
   when 'before'
-    @clocked_products = Product.before
+    @clocked_products = Product.before.page(params[:page]).per_page(24)
   when 'unknown'
-    @clocked_products = Product.unknown
+    @clocked_products = Product.unknown.page(params[:page]).per_page(24)
   else 'future'
-    @clocked_products = Product.future
+    @clocked_products = Product.future.page(params[:page]).per_page(24)
   end
 
 end

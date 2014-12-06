@@ -49,37 +49,11 @@
 
 <div class="container" style="text-align: center;padding-left: 75px;padding-right: 75px; border-left: 1px dashed white; border-right: 1px dashed white; border-radius: 20px;">
   <div class="row" style="padding-top: 30px; ">
-  <% @clocked_products.each do |product| %> 
-  <% if @current_user.clocks.find_by(product_id: product.id) %> 
-     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 thumb" style="margin-bottom: 8.5%; height: 170px;">
 
-<%= link_to product do %>
-     <div class="thumbnail" style="margin-bottom: 0px;">  
-       <%= image_for(product) %>
-        <div class="unit-caption"> 
-        <h2 style="font-size:18px; padding-top: 9px; color:white"> <%= product.name.upcase %> </h2>
-         <p style="font-size:15px; color:white"> <%= format_price(product) %> </p>
-        </div> 
+<div id="clocked_products">
+  <%= render "image" %>
+</div>
 
-     </div>
-        <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(167, 205, 249);color: black; text-align: center; position: absolute; z-index: 2; margin-top: 132px; width: 190px; top: 0; left: 0;right: 0;margin-left: auto;margin-right: auto;">
-             <%= format_releasing_on(product) %> - <span style="color: red; font-weight: 500;"><%= format_releasing_on_remaining(product) %> </span>  </div>
-   <% end %>
-            <div style="position: absolute; padding-left: 41.3%; padding-top: 12px;">
-            <% if current_user %>
-              <% if current_user.clocks.find_by(product_id: product.id) %>
-              <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete do %>
-             <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
-              <% end %> 
-            <% else %>
-              <%= button_to product_clocks_path(product) do %>  
-            <i class="glyphicon glyphicon-time" style= "color:white;"> </i>
-              <% end %> 
-              <% end %>
-            <% end %>
-          </div> 
-  </div>
-<% end %>
+   <%= will_paginate @clocked_products %>
 
-   <% end %>
    <% end %>
