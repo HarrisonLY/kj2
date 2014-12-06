@@ -13,7 +13,16 @@ end
   helper_method :sort_column, :sort_direction
 def show
   @user = User.find(params[:id])
-  @clocked_products = @user.clocked_products.order(sort_column + " " + sort_direction)
+  @clocked_products = @user.clocked_products
+
+  case params[:scope] 
+  when 'before'
+    @clocked_products = Product.before.page(params[:page]).per_page(12)
+  when 'unknown'
+    @clocked_products = Product.unknown.page(params[:page]).per_page(12)
+  else 'future'
+    @clocked_products = Product.future.page(params[:page]).per_page(12)
+  end
 end
 
 def new
