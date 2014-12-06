@@ -4738,7 +4738,6 @@ a.thumbnail.active {
 
 .flash {
   color: #444;
-
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -4750,7 +4749,6 @@ a.thumbnail.active {
   }  
 
   &.notice {
-
     background-color: #DBFFDD;
   }
 
