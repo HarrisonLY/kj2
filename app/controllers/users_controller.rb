@@ -17,11 +17,11 @@ def show
 
   case params[:scope] 
   when 'before'
-    @clocked_products = Product.before.page(params[:page]).per_page(12)
+    @clocked_products = Product.before.page(params[:page]).per_page(15)
   when 'unknown'
-    @clocked_products = Product.unknown.page(params[:page]).per_page(12)
+    @clocked_products = Product.unknown.page(params[:page]).per_page(15)
   else 'future'
-    @clocked_products = Product.future.page(params[:page]).per_page(12)
+    @clocked_products = Product.future.page(params[:page]).per_page(15)
   end
 end
 
