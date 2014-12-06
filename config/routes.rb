@@ -27,7 +27,7 @@ Kijovo::Application.routes.draw do
      get 'users/image/:id' => 'users#image', as: :users_image
      get 'signup' => 'users#new'
      post 'users_create' => 'users# create'
-     get 'users/tutorial/:id' => 'users#tutorial', as: :users_tutorial
+     get '/tutorial/:id' => 'users#tutorial', as: :users_tutorial
 
 
     get 'auth/:provider/callback', to: 'sessions#create'
