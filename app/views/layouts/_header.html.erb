@@ -32,7 +32,12 @@
       <li>
       <% if current_user %>
 
+      <% if current_page?("/contacts") %>
+      <%= link_to user_path(current_user) do  %> 
+      <i class="glyphicon glyphicon-home" style="font-size: 23px; margin-top: 10px; color:lightgrey;"></i> <% end %>
+      <% else %>
       <a href='/users/<%= @current_user.id %>/future'><i class="glyphicon glyphicon-home" style="font-size: 23px; margin-top: 10px; color:lightgrey;"></i></a>
+      <% end %>
 
       <li> <a href = "/products/filter/trending" <i class="glyphicon glyphicon-search" style="font-size: 22px; color:lightgrey;"> </i> </a> </li> 
 

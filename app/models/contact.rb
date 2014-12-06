@@ -15,9 +15,9 @@ class Contact < MailForm::Base
       :from => "info@kijovo.com"
     }
   end
-
-
   
+
+
 end
 
 
