@@ -14,7 +14,7 @@
         <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(167, 205, 249);color: black; text-align: center; position: absolute; z-index: 2; margin-top: 132px; width: 190px; top: 0; left: 0;right: 0;margin-left: auto;margin-right: auto;">
              <%= format_releasing_on(product) %> - <span style="color: red; font-weight: 500;"><%= format_releasing_on_remaining(product) %> </span>  </div>
    <% end %>
-            <div style="position: absolute; padding-left: 41.3%; padding-top: 12px;">
+            <div style="position: absolute; padding-left: 41.3%; padding-top: 7px;">
             <% if current_user %>
               <% if current_user.clocks.find_by(product_id: product.id) %>
               <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete do %>
