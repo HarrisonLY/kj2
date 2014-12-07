@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   before_create { generate_token(:auth_token) }
 	after_create :subscribe_to_mailchimp
-
-
+  before_validation :downcase_email
+  before_save { |user| user.email = email.downcase }
 
     has_many :clocks, dependent: :destroy
     has_many :clocked_products, through: :clocks, source: :product
@@ -16,7 +16,7 @@ validates :password, length: { minimum: 3, allow_blank: true }
 #validates :gender, presence: true
 #validates :born_in, presence: true
 
-validates :email, presence: true,                   
+validates :email, presence: true,                 
                   format: /\A\S+@\S+\z/,
                   uniqueness: { case_sensitive: false }
 
@@ -95,6 +95,8 @@ end
     end
   end
 
-
+def downcase_email
+  self.email = self.email.downcase if self.email.present?
+end
 
 end
