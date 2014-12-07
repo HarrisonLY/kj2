@@ -6,7 +6,7 @@
      <div class="thumbnail" style="margin-bottom: 0px;">  
        <%= image_for(product) %>
         <div class="unit-caption"> 
-        <h2 style="font-size:18px; padding-top: 9px; color:white"> <%= product.name.upcase %> </h2>
+        <h2 style="font-size:18px; padding-top: 9px; color:white"> <%= product.name.upcase.truncate(20) %> </h2>
          <p style="font-size:15px; color:white"> <%= format_price(product) %> </p>
         </div> 
 
