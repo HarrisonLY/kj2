@@ -17,7 +17,7 @@
         </div>
 
    <% end %>
-            <div style="position: absolute; padding-left: 640px; padding-top: 14px;">
+            <div style="position: absolute; padding-left: 640px; padding-top: 6px;">
             <% if current_user %>
               <% if current_user.clocks.find_by(product_id: product.id) %>
               <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete do %>
