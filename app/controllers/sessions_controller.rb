@@ -2,9 +2,7 @@ class SessionsController < ApplicationController
 
 
   def new
-    if current_user
-      redirect_to filtered_products_path(:trending)
-    end
+
   end
 
   def create
