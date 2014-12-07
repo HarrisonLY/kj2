@@ -5,20 +5,6 @@
 <% if not current_user %>
 <br> 
 <h1  style="text-align: center;"> Contact Us </h1>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=584095781694269&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div id="container" style="display: block; margin-right: auto; margin-left: auto; height: 22px !important; width: 93px !important; overflow: hidden !important; ">
-<div class="fb-like" data-href="http://facebook.com/kijovo" data-layout="button" data-action="like" data-show-faces="false" data-share="true"> 
-</div>
-</div>
   <% end %>
 
   <% if current_user %>
@@ -41,7 +27,7 @@
 
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
     <div style="border:1px solid rgb(190, 190, 190); height: 300px; width: 79%; margin-top:20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-right:auto; margin-left:auto">
-     <fieldset>
+     <fieldset style="border: none;">
        <div class="text-center" style="font-size: 18px; margin-top: 12px; color: lightgrey;">Please submit your comments, questions, or concerns below.
        </div>
 
