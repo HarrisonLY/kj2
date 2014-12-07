@@ -30,6 +30,9 @@ end
 
 def new
   @user = User.new
+    if current_user
+      redirect_to "/products/filter/trending"
+    end
 end
 
 
