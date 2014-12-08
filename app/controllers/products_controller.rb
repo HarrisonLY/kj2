@@ -64,7 +64,7 @@ end
 
 def destroy
   @product.destroy
-  redirect_to products_url, alert: "Product successfully deleted!"
+  redirect_to "/products/filter/trending", alert: "Product successfully deleted!"
 end
 
 

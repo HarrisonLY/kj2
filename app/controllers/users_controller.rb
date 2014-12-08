@@ -107,12 +107,12 @@ end
 
   def require_correct_user
     @user = User.find(params[:id])
-      redirect_to products_url unless current_user? (@user)
+      redirect_to "/products/filter/trending" unless current_user? (@user)
     end
 
   def require_correct_user_admin
     @user = User.find(params[:id])
-     redirect_to products_url unless current_user_admin? (@user)
+     redirect_to "/products/filter/trending" unless current_user_admin? (@user)
     end
 
 

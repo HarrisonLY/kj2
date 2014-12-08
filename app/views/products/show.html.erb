@@ -37,9 +37,15 @@
 <div id="showclock" style="position: absolute; padding-left:85px; padding-top: 188px; z-index: 3;"> 
     <% if current_user %>
     <% if @current_clock %> 
-<%= render 'products/unclock' %>
+<% if @current_clock %> 
+<%= button_to product_clock_path(@product, @current_clock), method: :delete do %>
+   <i class="glyphicon glyphicon-time" style= "color:red;"> </i>
+      <% end %> 
+      <% end %> 
     <% else %>
-<%= render 'products/clock' %>
+<%= button_to product_clocks_path(@product) do %>
+   <i class="glyphicon glyphicon-time" style= "color:white;"> </i>
+    <% end %> 
     <% end %> 
         <% end %> 
         </div>

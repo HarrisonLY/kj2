@@ -6,7 +6,7 @@
 <div style="text-align: center;">
 
 <% if current_user %>
- <%= link_to "Keep Browsing", products_url %>
+ <%= link_to "Keep Browsing", "/products/filter/trending" %>
  &nbsp  &nbsp  &nbsp
  <%= link_to "My Timecard", user_path(current_user) %>
 <% else %>
