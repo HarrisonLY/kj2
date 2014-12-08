@@ -9,3 +9,23 @@
 <% if current_user_admin? %>
 <p style="padding-left: 49%;"> <%= link_to "Edit", edit_category_path(@category) %> </p>
     <% end %>
+
+<table class="table table-bordered" id="users" style = "width: 85%; margin-top: 50px;" align="center">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+  <% @category.products.each do |product| %>
+        <tr>
+            <td> <%= link_to product.name, product %> </td>
+            <td> <%= product.created_at.to_s(:long)	 %> </td>
+            <td> <%= product.updated_at.to_s(:long) %> </td>
+            <td> <%= link_to "Edit", edit_product_path(product) %> </td>
+        </tr>
+          <% end %>
+</table>
