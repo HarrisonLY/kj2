@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if 
-      auth = request.env["omniauth.auth"]
+    if auth = request.env["omniauth.auth"]
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
       redirect_to(session[:intended_url] || filtered_products_path(:trending))
       session[:intended_url] = nil
-    elsif user = User.authenticate(params[:email].downcase, params[:password])
+    elsif 
+      user = User.authenticate(params[:email].downcase, params[:password])
       session[:user_id] = user.id
       redirect_to(session[:intended_url] || filtered_products_path(:trending))
       session[:intended_url] = nil
