@@ -16,11 +16,11 @@ def show
 
   case params[:scope] 
   when 'before'
-    @clocked_products = Product.before.page(params[:page]).per_page(30)
+    @clocked_products = Product.before
   when 'unknown'
-    @clocked_products = Product.unknown.page(params[:page]).per_page(30)
+    @clocked_products = Product.unknown
   else 'future'
-    @clocked_products = Product.future.page(params[:page]).per_page(30)
+    @clocked_products = Product.future
 
   end
     respond_to do |format|
@@ -76,11 +76,11 @@ def image
 
   case params[:scope] 
   when 'before'
-    @clocked_products = Product.before.page(params[:page]).per_page(48)
+    @clocked_products = Product.before
   when 'unknown'
-    @clocked_products = Product.unknown.page(params[:page]).per_page(48)
+    @clocked_products = Product.unknown
   else 'future'
-    @clocked_products = Product.future.page(params[:page]).per_page(48)
+    @clocked_products = Product.future
   end
   respond_to do |format|
     format.html
