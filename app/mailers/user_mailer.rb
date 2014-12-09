@@ -6,7 +6,7 @@ ActionMailer::Base.smtp_settings = {
     :address =>        'smtp.mandrillapp.com',
     :user_name =>      'harrison@kijovo.com',
     :password =>       'dDXGDfnTBNJ5hkCAbeOyqA',
-    :domain =>         'kijovodemo.herokuapp.com',
+    :domain =>         'kijovo.com',
     :authentication => :plain
 }
 ActionMailer::Base.delivery_method = :smtp

@@ -44,7 +44,7 @@ Kijovo::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
-  config.action_mailer.default_url_options = { :host => "kijovodemo.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "kijovo.com" }
 
 
   config.paperclip_defaults = {
