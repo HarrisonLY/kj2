@@ -40,7 +40,7 @@ gem 'gibbon', github: "amro/gibbon"
 gem 'sucker_punch', '~> 1.0'
 
 gem 'will_paginate', '~> 3.0.6'
-
+gem 'kaminari'
 
 
 gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
