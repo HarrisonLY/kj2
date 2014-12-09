@@ -4,9 +4,7 @@ class ClocksController < ApplicationController
     respond_to :html, :js
 
 def create
-
 	@product.clocks.create!(user: current_user)  
-
       respond_to do |format|
       format.html { redirect_to :back }
       format.js
@@ -14,9 +12,7 @@ end
 end
 
 def destroy
-
   clock = current_user.clocks.find(params[:id])
-
   clock.destroy
       respond_to do |format|
       format.html { redirect_to :back }

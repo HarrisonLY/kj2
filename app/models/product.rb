@@ -59,6 +59,7 @@ class Product < ActiveRecord::Base
 
 
 
+
 	def tbd?
 		price.blank? || price.zero? 
 	end

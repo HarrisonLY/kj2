@@ -14141,6 +14141,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     url = $('.pagination .next_page').attr('href');
     if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
       window.pagination_loading = true;
+      $('.pagination').text('Loading more products...');
       return $.getScript(url).always(function() {
         return window.pagination_loading = false;
       });

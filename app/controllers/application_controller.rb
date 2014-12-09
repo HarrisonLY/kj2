@@ -38,6 +38,9 @@ helper_method :current_user?
   
   helper_method :current_user_admin?
 
+def blog
+  redirect_to "https://kijovo.com/blog#{request.fullpath.gsub('/blog','')}", :status => :moved_permanently
+end
 
 
 end

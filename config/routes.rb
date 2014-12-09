@@ -44,4 +44,7 @@ Kijovo::Application.routes.draw do
 
      resources :categories
 
+      get '(*path)' => 'application#blog', :constraints => {subdomain: 'blog'}
+      get '/blog' => redirect("https://kijovo.com/blog/")
+
 end
