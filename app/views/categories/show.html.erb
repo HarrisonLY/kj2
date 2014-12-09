@@ -1,13 +1,13 @@
 <article>
   <header>
-    <h1 style="text-align: center;"> <%= @category.name %></h1> 
+    <h1 style="text-align: center;"> <%= @category.name %> ( <%= @category.products.size %> ) </h1> 
   </header>
 </article>
 
 <br>
 
 <% if current_user_admin? %>
-<p style="padding-left: 49%;"> <%= link_to "Edit", edit_category_path(@category) %> </p>
+<p style="padding-left: 49%;"> <%= link_to "Edit Category", edit_category_path(@category) %>  </p>
     <% end %>
 
 <table class="table table-bordered" id="users" style = "width: 85%; margin-top: 50px;" align="center">
@@ -27,5 +27,5 @@
             <td> <%= product.updated_at.to_s(:long) %> </td>
             <td> <%= link_to "Edit", edit_product_path(product) %> </td>
         </tr>
-          <% end %>
+  <% end %>
 </table>
