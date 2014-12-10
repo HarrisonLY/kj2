@@ -71,7 +71,7 @@ class Product < ActiveRecord::Base
 
 
 	def out?
-		releasing_on < (Time.now - 1.day)
+		releasing_on <= Date.current
 	end		
 
 	def to_param

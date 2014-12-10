@@ -6,7 +6,7 @@ module UsersHelper
     elsif product.out?
       "OUT"
     else
-    (product.releasing_on - (DateTime.now - 2.day)).to_i
+    (product.releasing_on - (DateTime.now - 1.day)).to_i
   end
 end
 
