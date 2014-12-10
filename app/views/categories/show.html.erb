@@ -7,16 +7,16 @@
 <br>
 
 <% if current_user_admin? %>
-<p style="padding-left: 49%;"> <%= link_to "Edit Category", edit_category_path(@category) %>  </p>
+<p style="text-align: center;"> <%= link_to "Edit Category", edit_category_path(@category) %>  </p>
     <% end %>
 
 <table class="table table-bordered" id="users" style = "width: 85%; margin-top: 50px;" align="center">
     <thead>
         <tr>
-            <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Created</th>
-            <th>Updated</th>
+            <th><%= sortable "name", "Product Name" %></th>
+            <th><%= sortable "price", "Product Price" %></th>
+            <th><%= sortable "created_at", "Created On" %></th>
+            <th><%= sortable "updated_at", "Updated On" %></th>
             <th>Edit</th>
         </tr>
     </thead>
@@ -24,7 +24,7 @@
   <% @category.products.each do |product| %>
         <tr>
             <td> <%= link_to product.name, product %> </td>
-            <td> <%= product.price %> </td>
+            <td> <%= format_price(product) %> </td>
             <td> <%= product.created_at.to_s(:long)	 %> </td>
             <td> <%= product.updated_at.to_s(:long) %> </td>
             <td> <%= link_to "Edit", edit_product_path(product) %> </td>

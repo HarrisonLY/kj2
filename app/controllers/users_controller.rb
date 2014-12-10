@@ -9,7 +9,7 @@ def index
 end
 
 
-  helper_method :sort_column, :sort_direction
+
 def show
   @user = User.find(params[:id])
   @clocked_products = @user.clocked_products
@@ -122,14 +122,4 @@ def subscribe
   @user.subscribe_to_mailchimp(true)
   # redirect to some other url
 end
-
-
-      def sort_column
-    Product.column_names.include?(params[:sort]) ? params[:sort] : "releasing_on"
-  end
-  
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
-
 end

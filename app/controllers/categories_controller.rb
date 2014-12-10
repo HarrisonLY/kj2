@@ -1,12 +1,16 @@
 class CategoriesController < ApplicationController
   before_action :require_admin
 
+
 def index
   @categories = Category.all
 end
 
+
+helper_method :sort_column, :sort_direction
 def show
 	@category = Category.find(params[:id])
+  @category.products = @category.products.order(sort_column + " " + sort_direction)
 end
 
 def edit
@@ -50,6 +54,14 @@ private
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   end
