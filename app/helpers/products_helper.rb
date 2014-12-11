@@ -23,7 +23,7 @@ def format_releasing_on(product)
     elsif product.out?
       "OUT"
     else
-    (product.releasing_on - (DateTime.now - 1.day)).to_i
+    (product.releasing_on - Date.current ).to_i
   end 
 end  
 
