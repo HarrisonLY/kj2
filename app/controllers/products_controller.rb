@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :require_signin
+  before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -18,6 +18,10 @@ def index
     @products = Product.newest.page(params[:page]).per_page(24)
   else
     @products = Product.trending.page(params[:page]).per_page(24)
+  end
+
+  if current_user
+  @current_clock = current_user.clocks.find_by(product_id: @product.id)
   end
 
   respond_to do |format|

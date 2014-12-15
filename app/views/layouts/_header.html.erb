@@ -31,13 +31,8 @@
       </li>
       <li>
       <% if current_user %>
-
-      <% if current_page?("/contacts") %>
       <%= link_to user_path(current_user) do  %> 
       <i class="glyphicon glyphicon-home" style="font-size: 23px; color:lightgrey;"></i> <% end %>
-      <% else %>
-      <a href='/users/<%= @current_user.id %>/future'><i class="glyphicon glyphicon-home" style="font-size: 23px; color:lightgrey;"></i></a>
-      <% end %>
 
       <li> <a href = "/products/filter/trending" <i class="glyphicon glyphicon-search" style="font-size: 22px; color:lightgrey;"> </i> </a> </li> 
 
@@ -67,3 +62,54 @@
 </nav>
 
 </header>
+
+<% if not current_user  %>
+
+<% unless current_page?(root_url) %>
+<header id="page-header" style="padding-bottom: 30px;">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-bottom: 1px solid rgb(65, 65, 65);">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/">
+      <img alt="Brand" <img="" src="/assets/kijovo(white)-750403083fad66952fb39c00403f8609.png" style="max-height: 100px; max-width: 220px; width: 136px; height: 51px;" %> 
+ 
+      </a>
+
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          </ul>
+        </li>
+      </ul>
+        <div class>
+        </div>
+      <ul class="nav navbar-nav navbar-right">
+    <li>
+      </li>
+      <li>
+      <li> <a href="/signin" style="color: lightgrey;">LOG IN</a> </li>
+      <li> <a href="/signup" style="color: lightgrey;">SIGN UP</a> </li>
+
+          <ul class="dropdown-menu" role="menu">
+
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+
+
+
+<% end %>
+<% end %>
