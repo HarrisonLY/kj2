@@ -6,8 +6,12 @@
      <div class="thumbnail" style="margin-bottom: 0px;">  
        <%= image_for(product) %>
         <div class="unit-caption"> 
+      <% if current_user %>
         <h2 style="font-size:18px; padding-top: 4px; color:white; padding-left: 3px; padding-right: 3px;"> <%= product.name.upcase.truncate(30) %> </h2>
          <p style="font-size:15px; color:white"> <%= format_price(product) %> </p>
+      <% else %>
+        <h2 style="font-size:18px; padding-top: 15px; color:white; padding-left: 3px; padding-right: 3px;"> <%= product.name.upcase.truncate(30) %> </h2>
+      <% end %>
         </div> 
 
      </div>
