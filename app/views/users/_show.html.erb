@@ -1,6 +1,6 @@
 <% @clocked_products.each do |product| %> 
   <% if @current_user.clocks.find_by(product_id: product.id) %> 
-     <div class="col-lg-3 thumb" style="margin-bottom: 8.5%;">
+     <div class="col-lg-12 thumb" style="margin-bottom: 8.5%;">
 
 <%= link_to product do %>
      <div class="thumbnail" style="margin-bottom: 0px; height: 43px; width: 43px;">  
