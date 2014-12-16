@@ -135,7 +135,10 @@ h2{
 </style>
 </head>
 
-
+<% unless @current_user %>
+<p style="width: 630px; position: absolute; top: 350px; margin-left: 250px; height: 215px; padding-left: 120px; padding-right: 70px;padding-top: 90px; margin-right: 80px; text-align: center; color: rgb(0, 207, 255); font-weight: 700;font-size: 30px; z-index: 100;"> To See More Images <a href="/signin" style="color: #FFFFFF;">Log In</a> or <a href="/signup" style="color: #FFFFFF;">Sign Up</a>!
+</p>
+<% end %>
 
 <body  style="padding-bottom: 5px">
   <% if @product.picture? %> 
@@ -145,6 +148,7 @@ h2{
 
        <!-- Carousel items --> 
         <div class="carousel-inner">
+          
           <% if @product.picture? %> 
             <div class="active item">
               <%= picture_for(@product) %> 
@@ -206,6 +210,7 @@ h2{
           <% end %>
         </div>
 
+<% if @current_user %>
         <!-- Carousel nav -->
         <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="border-radius: 10px;">
             <span class="glyphicon glyphicon-chevron-left" style=";"></span>
@@ -213,6 +218,7 @@ h2{
         <a class="carousel-control right" href="#myCarousel" data-slide="next" style="border-radius: 10px;">
             <span class="glyphicon glyphicon-chevron-right" style=";"></span>
         </a>
+<% end %>
     </div>
 </div>
 </body>
