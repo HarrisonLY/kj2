@@ -34,7 +34,9 @@
               <% end %>
 
             <% else %>
+              <%= link_to signin_path, data: { confirm: 'You must be logged in to do that.. Click ok to Log In or Sign Up.' }  do %>  
             <i class="glyphicon glyphicon-time" style="color:white;margin-left: 5px;"> </i>
+            <% end %>
             <% end %>
           </div> 
 
