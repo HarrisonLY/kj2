@@ -11,7 +11,11 @@ class SessionsController < ApplicationController
     if auth = request.env["omniauth.auth"]
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
-      redirect_to(session[:intended_url] || filtered_products_path(:trending))
+        if user.created_at.to_s > (Time.now - 60.seconds)
+          redirect_to users_tutorial_url (@user)
+        else
+          redirect_to(session[:intended_url] || filtered_products_path(:trending))
+        end
       session[:intended_url] = nil
     elsif 
       user = User.authenticate(params[:email].downcase, params[:password])
