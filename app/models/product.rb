@@ -68,8 +68,6 @@ class Product < ActiveRecord::Base
 		releasing_on.blank?
 	end
 
-
-
 	def out?
 		releasing_on <= Date.current
 	end		

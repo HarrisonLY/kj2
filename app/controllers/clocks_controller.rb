@@ -29,7 +29,7 @@ private
   end
 
 def released
-  user = User.find_by_email(params[:email])
+  user = User.find_by_email(params[:email].downcase)
   user.send.clock_release if user.clocked.product.out?
 end
 
