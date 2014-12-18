@@ -243,6 +243,17 @@ h2{
 </body>
 </html> 
 
+<div style="text-align: center">
+<% if current_user_admin? %> 
+<br>
+  <h3>Clockers</h3>
+    <% @clockers.each do |user| %>
+        <%= user.email %>
+        <br>
+    <% end %>
+<% end %>
+</div>
+
 <% end %> 
 
 

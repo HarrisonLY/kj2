@@ -21,10 +21,10 @@ def password_reset(user)
     mail(to: @user.email, subject: 'Password Reset')
 end
 
-def clock_release(user product clock)
-  @user = user
-  email_with_name = "#{@user.first_name} <#{@user.email}>"
-  mail(to: email_with_name, subject: 'Sneakers Releasing Today')
-end
+#def clock_release(user product clock)
+#  @user = user
+#  email_with_name = "#{@user.first_name} <#{@user.email}>"
+#  mail(to: email_with_name, subject: 'Sneakers Releasing Today')
+#end
 
 end

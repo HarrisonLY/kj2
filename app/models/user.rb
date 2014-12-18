@@ -56,7 +56,7 @@ def send_password_reset
 end
 
 def send_clock_release
-  UserMailer.clock_release(@user).deliver
+#  UserMailer.clock_release(@user).deliver
 end 
 
 def generate_token(column)
