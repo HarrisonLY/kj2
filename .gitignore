@@ -20,3 +20,5 @@ public/assets/**
 config/amazon_s3.yml 
 config/database.yml 
 config/secrets.yml
+
+.env
