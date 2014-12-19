@@ -14173,7 +14173,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     };
 
     GoogleAnalytics.analyticsId = function() {
-      return 'UA-49149318-1';
+      return 'UA-49149318-5';
     };
 
     return GoogleAnalytics;
