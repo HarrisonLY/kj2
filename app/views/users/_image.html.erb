@@ -1,6 +1,6 @@
  <% @clocked_products.each do |product| %> 
   <% if @current_user.clocks.find_by(product_id: product.id) %> 
-     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 thumb" style="margin-bottom: 8.5%; height: 170px;">
+     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 thumb" style="margin-bottom: 11%; height: 170px;">
 
 <%= link_to product do %>
      <div class="thumbnail" style="margin-bottom: 0px;">  
@@ -11,10 +11,14 @@
         </div> 
 
      </div>
-        <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(167, 205, 249);color: black; text-align: center; position: absolute; z-index: 2; margin-top: 132px; width: 190px; top: 0; left: 0;right: 0;margin-left: auto;margin-right: auto;">
-             <%= format_releasing_on(product) %> - <span style="color: red; font-weight: 500;"><%= format_releasing_on_remaining(product) %> </span>  </div>
+<div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(167, 205, 249);color: black; text-align: center; position: absolute; z-index: 2; margin-top: 132px; width: 190px; top: 0; left: 0;right: 0;margin-left: auto;margin-right: auto;">
+     <%= format_releasing_on(product) %> 
+  <div style="color: black;  font-size: 14px;height: 25px; width: 170px; background-color: rgb(74, 102, 183); border-radius: 50px; margin-left: 10px;padding-top: 3.3px;"> 
+    Days Remaining - <span style="color:white; font-weight: 500;"> <%= format_releasing_on_remaining(product) %> </span> </div>  
+</div>
    <% end %>
-            <div style="position: absolute; padding-left: 41.3%; padding-top: 7px;">
+   
+            <div style="position: absolute; padding-left: 41.3%; padding-top: 25px;">
             <% if current_user %>
               <% if current_user.clocks.find_by(product_id: product.id) %>
               <%= button_to product_clock_path(product, @current_user.clocks.find_by(product_id: product.id)), method: :delete do %>
