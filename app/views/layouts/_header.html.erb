@@ -31,8 +31,9 @@
       </li>
       <li>
       <% if current_user %>
-      <%= link_to user_path(current_user) do  %> 
-      <i class="glyphicon glyphicon-home" style="font-size: 23px; color:lightgrey;"></i> <% end %>
+      <%= link_to users_future_path(current_user) do  %> 
+      <i class="glyphicon glyphicon-home" style="font-size: 23px; color:lightgrey;"></i> 
+      <% end %>
 
       <li> <a href = "/products/filter/trending" <i class="glyphicon glyphicon-search" style="font-size: 22px; color:lightgrey;"> </i> </a> </li> 
 

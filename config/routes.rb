@@ -28,6 +28,7 @@ Kijovo::Application.routes.draw do
      get 'signup' => 'users#new'
      post 'users_create' => 'users# create'
      get '/tutorial' => 'users#tutorial', as: :users_tutorial
+     get "users/:id/future" => "users#show", as: :users_future
 
 
     get 'auth/:provider/callback', to: 'sessions#create'
