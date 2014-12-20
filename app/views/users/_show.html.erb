@@ -9,7 +9,7 @@
      </div>
 
 
-        <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(87, 87, 87);color: black;  position: absolute; z-index: 2; width: 440px; top: 0;left: 90px;text-align: left; padding-left: 20px; color: white"> <%= product.name.truncate(36) %> 
+        <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(87, 87, 87);color: black;  position: absolute; z-index: 2; width: 440px; top: 0;left: 90px;text-align: left; padding-left: 20px; color: white"> <%= product.name.truncate(37) %> 
         </div>
 
        <div style="font-size: 17px; padding-top: 11px; height: 43px; border-radius: 20px; background-color: rgb(167, 205, 249);color: black; text-align: center; position: absolute; z-index: 2; ; width: 190px; top: 0; left: 180px;right: 0;margin-left: auto;margin-right: auto;">
@@ -33,7 +33,7 @@
             <% end %>
           </div> 
 
-<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.ff7d9077a26377d36b6a53b1a95be617.en.html#_=1417980191078&amp;count=none&amp;hashtags=kijovokicks&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F1%2Ffuture&amp;size=m&amp;text=<%= product.name %> -- releasing on <%= format_releasing_on(product) %>! &amp;url=http%3A%2F%2Fwww.kijovo.com/products/<%= product.slug %>&amp;via=kijovo" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-none" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 57px; height: 19px;margin-left: 267px;margin-top: 9.7px;position: absolute;"></iframe>
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.ff7d9077a26377d36b6a53b1a95be617.en.html#_=1417980191078&amp;count=none&amp;hashtags=kijovokicks&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F1%2Ffuture&amp;size=m&amp;text=<%= product.name %> | Releasing on <%= format_releasing_on(product) %>! &amp;url=http%3A%2F%2Fwww.kijovo.com/products/<%= product.slug %>&amp;via=kijovo" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-none" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 57px; height: 19px;margin-left: 267px;margin-top: 9.7px;position: absolute;"></iframe>
 
   </div>
 <% end %>
