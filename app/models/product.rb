@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :slug, uniqueness: true
 
-	validates :description, length: {maximum: 500}
+	validates :description, length: {maximum: 570}
 
 
 
