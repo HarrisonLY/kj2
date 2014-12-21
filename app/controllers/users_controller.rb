@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_signin, except: [:new, :create, :tutorial]
+  before_action :require_signin, except: [:new, :create]
   before_action :require_correct_user, only: [:show, :edit, :update, :image]
   before_action :require_admin, only: [:index, :destroy]
 
