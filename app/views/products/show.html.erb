@@ -60,12 +60,17 @@
   </div>
 
 
-
+<% if @product.description? %> 
 <div class="<%= 'browse-blur' unless @current_user %>" style="margin-left: 270px; position: absolute; width: 475px; border-radius: 10px; background-color: rgb(81, 81, 81); height: 196px; width: 630px;">
     <h4 style="font-size: 16px; text-align: center; margin-top: 12px; color: rgb(167, 205, 249);">Overview</h4>
     <p style="font-size: 14px; padding-left: 25px; padding-right: 25px; color: white;"> <%= simple_format(@product.description) %> </p>
 </div>
-
+<% else %>
+<div class="<%= 'browse-blur' unless @current_user %>" style="margin-left: 270px; position: absolute; width: 475px; border-radius: 10px; background-color: rgb(81, 81, 81); height: 196px; width: 630px;">
+    <h4 style="font-size: 16px; text-align: center; margin-top: 12px; color: rgb(167, 205, 249);">Overview</h4>
+    <p style="font-size: 34px; text-align: center; padding-top: 36px; padding-left: 25px; padding-right: 25px; color: white; font-weight: 500; "> DESCRIPTION COMING SOON </p>
+</div>
+<% end %>
 
 <div style="padding-top: 1.5px; margin-top: 245px; width: 200px; height: 70px; text-align: center; border-radius: 10px; background-color: rgb(190, 255, 0); margin-left: 20px;">
   
