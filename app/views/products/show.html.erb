@@ -74,18 +74,25 @@
 
 <div style="padding-top: 1.5px; margin-top: 245px; width: 200px; height: 70px; text-align: center; border-radius: 10px; background-color: rgb(190, 255, 0); margin-left: 20px;">
   
-  <h4 style="font-size: 14px; color: black">SHARE THIS PRODUCT!</h4>
+  <h4 style="font-size: 14px; color: black;margin-bottom: 5px;">SHARE THIS PRODUCT!</h4>
 
 <fb:share-button href="https://www.kijovo.com/products/<%= @product.slug %>" data-image="<% image_for(@product) %>" layout="button"></fb:share-button>
 
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.kijovo.com/products/<%= @product.slug %>" data-text="<%= @product.name %> | Releases on <%= format_releasing_on(@product) %>!" data-via="kijovo" data-count="none" data-hashtags="kijovokicks">Tweet</a>
+<span class='st_twitter_hcount'  st_title="<%= @product.name %> | Releases on <%= format_releasing_on(@product) %>! #kijovokicks" displayText='Tweet'></span>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+
 <!-- Place this tag where you want the +1 button to render. -->
 <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "3f48a638-e25f-4454-a9b7-f06ff90bf81b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
 
 </div>
   
