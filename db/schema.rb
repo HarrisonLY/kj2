@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129030833) do
+ActiveRecord::Schema.define(version: 20150606001216) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20141129030833) do
     t.string   "picture9_content_type"
     t.integer  "picture9_file_size"
     t.datetime "picture9_updated_at"
+    t.string   "video"
   end
 
   create_table "users", force: true do |t|
