@@ -293,7 +293,9 @@ twttr.widgets.load();
 
 <html xmlns:fb="http://ogp.me/ns/fb#">
 
-
+<div class="embed-container">
+  <%= embed(@product.video) if @product.video %>
+</div>
 
 
 </article>
